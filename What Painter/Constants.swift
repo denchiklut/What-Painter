@@ -12,4 +12,5 @@ struct K {
     static let appName = "What Painter"
     static let cellIdentifier = "ReusableCell"
     static let cellNibName = "LevelCell"
+    static let previewSegue = "previewLevel"
 }

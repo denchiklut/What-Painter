@@ -13,19 +13,13 @@ private let reuseIdentifier = K.cellIdentifier
 class MainController: UICollectionViewController {
     
     var levels: [LevelData] = [
-        LevelData(title: "Level 1", image: "monoLiza"),
-        LevelData(title: "Level 2", image: "monoLiza"),
-        LevelData(title: "Level 3", image: "monoLiza"),
-        LevelData(title: "Level 4", image: "monoLiza"),
-        LevelData(title: "Level 5", image: "monoLiza"),
-        LevelData(title: "Level 6", image: "monoLiza"),
-        LevelData(title: "Level 7", image: "monoLiza"),
-        LevelData(title: "Level 8", image: "monoLiza"),
-        LevelData(title: "Level 9", image: "monoLiza"),
-        LevelData(title: "Level 10", image: "monoLiza"),
-        LevelData(title: "Level 11", image: "monoLiza"),
-        LevelData(title: "Level 12", image: "monoLiza")
+        LevelData(title: "Разминка", image: "1"),
+        LevelData(title: "Мировые шедевры", image: "2"),
+        LevelData(title: "Франция", image: "3"),
+        LevelData(title: "Лувр", image: "4")
     ]
+    
+    var selectedLevel = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +44,17 @@ class MainController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedLevel = indexPath.row
+        self.performSegue(withIdentifier: K.previewSegue, sender: self)
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
+        if segue.identifier == K.previewSegue {
+            let levelData = levels[selectedLevel]
+            let dc = segue.destination as! LevelPreviewController
+            
+            dc.data = levelData
+        }
+    }
 }
