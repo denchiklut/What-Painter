@@ -13,11 +13,18 @@ class QuizController: UIViewController {
     var levelData: Level?
     
     @IBOutlet weak var quizImage: UIImageView!
+    @IBOutlet weak var bgImage: UIImageView!
     
     @IBOutlet weak var choice1: UIButton!
     @IBOutlet weak var choice2: UIButton!
     @IBOutlet weak var choice3: UIButton!
     @IBOutlet weak var choice4: UIButton!
+    
+    @IBOutlet weak var vissualEffectView: UIVisualEffectView!
+    @IBOutlet var modalView: UIView!
+    @IBOutlet weak var imageName: UILabel!
+    
+    var effect: UIVisualEffect!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,6 +38,12 @@ class QuizController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        effect = vissualEffectView.effect
+        vissualEffectView.effect = nil
+        vissualEffectView.isHidden = true
+        modalView.layer.cornerRadius = 5
+        
         levelData?.quiz.delegate = self
         updateUI()
     }
@@ -39,18 +52,23 @@ class QuizController: UIViewController {
         if let answer = sender.currentTitle {
             if levelData!.quiz.checkAnswer(a: answer) {
                 sender.backgroundColor = UIColor.green
-                levelData?.quiz.nextQuestion()
-                
-                Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+                showModal()
             } else {
                 sender.backgroundColor = UIColor.red
             }
         }
     }
+    @IBAction func nextBtnPressed(_ sender: UIButton) {
+        hideModal()
+        levelData?.quiz.nextQuestion()
+        
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+    }
     
     @objc func updateUI() {
         if let answers = levelData?.quiz.getAnswers(), let image = levelData?.quiz.getImage() {
             quizImage.image = UIImage(named: image)
+            bgImage.image = UIImage(named: image)
             
             choice1.setTitle(answers[0], for: .normal)
             choice2.setTitle(answers[1], for: .normal)
@@ -62,6 +80,41 @@ class QuizController: UIViewController {
         choice2.backgroundColor = UIColor.darkGray
         choice3.backgroundColor = UIColor.darkGray
         choice4.backgroundColor = UIColor.darkGray
+    }
+    
+    func showModal() {
+        vissualEffectView.isHidden = false
+        self.view.addSubview(modalView)
+        modalView.center = self.view.center
+        modalView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        modalView.alpha = 0
+        
+        if let imgName = levelData?.quiz.getImageName() {
+            imageName.text = imgName
+        }
+        
+        UIView.animate(withDuration: 0.4) {
+            self.vissualEffectView.effect = self.effect
+            self.modalView.alpha = 1
+            self.modalView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func hideModal() {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.modalView.alpha = 0
+            self.modalView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.vissualEffectView.effect = nil
+        }) { (success: Bool) in
+            self.modalView.removeFromSuperview()
+            self.vissualEffectView.isHidden = true
+        }
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        DispatchQueue.main.async {
+            self.modalView.center = self.view.center
+        }
     }
 }
 

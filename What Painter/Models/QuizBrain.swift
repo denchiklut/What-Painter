@@ -27,6 +27,10 @@ class QuizBrain {
         return quiz[current].image
     }
     
+    func getImageName() -> String {
+           return quiz[current].name
+       }
+    
     func getAnswers() -> [String] {
         return quiz[current].answers
     }

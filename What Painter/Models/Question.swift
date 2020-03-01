@@ -12,4 +12,5 @@ struct Question {
     let image: String
     let answers: [String]
     let correctAnswer: String
+    let name: String
 }

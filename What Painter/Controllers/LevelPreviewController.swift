@@ -23,6 +23,7 @@ class LevelPreviewController: UIViewController {
         
         levelImage.image = UIImage(named: image)
         levelImage.layer.borderColor = UIColor.white.cgColor
+        levelImage.layer.cornerRadius = levelImage.frame.size.height / 2
         levelImage.layer.borderWidth = 2
 
     }
@@ -38,4 +39,9 @@ class LevelPreviewController: UIViewController {
         }
     }
     
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        DispatchQueue.main.async {
+            self.levelImage.layer.cornerRadius = self.levelImage.frame.size.height / 2
+        }
+    }
 }
