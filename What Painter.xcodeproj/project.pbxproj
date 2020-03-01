@@ -13,6 +13,7 @@
 		2934C31A240B10B20009ED78 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C319240B10B20009ED78 /* Question.swift */; };
 		296F06A4240A69DF00E220BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F06A3240A69DF00E220BE /* Constants.swift */; };
 		296F06A6240A780600E220BE /* LevelPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F06A5240A780600E220BE /* LevelPreviewController.swift */; };
+		296FB70F240C42A0008A8A5B /* ResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB70E240C42A0008A8A5B /* ResultsController.swift */; };
 		2970FC41240AD18C009B9DAD /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2970FC40240AD18C009B9DAD /* QuizController.swift */; };
 		29EE329E2409B8DA008547E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE329D2409B8DA008547E5 /* AppDelegate.swift */; };
 		29EE32A02409B8DA008547E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE329F2409B8DA008547E5 /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 		2934C319240B10B20009ED78 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		296F06A3240A69DF00E220BE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		296F06A5240A780600E220BE /* LevelPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPreviewController.swift; sourceTree = "<group>"; };
+		296FB70E240C42A0008A8A5B /* ResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsController.swift; sourceTree = "<group>"; };
 		2970FC40240AD18C009B9DAD /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		29EE329A2409B8DA008547E5 /* What Painter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What Painter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29EE329D2409B8DA008547E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				29EE32B32409BFC8008547E5 /* MainController.swift */,
 				296F06A5240A780600E220BE /* LevelPreviewController.swift */,
 				2970FC40240AD18C009B9DAD /* QuizController.swift */,
+				296FB70E240C42A0008A8A5B /* ResultsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				29EE32B72409C06B008547E5 /* LevelCell.swift in Sources */,
 				29EE32A02409B8DA008547E5 /* SceneDelegate.swift in Sources */,
 				2934C31A240B10B20009ED78 /* Question.swift in Sources */,
+				296FB70F240C42A0008A8A5B /* ResultsController.swift in Sources */,
 				296F06A4240A69DF00E220BE /* Constants.swift in Sources */,
 				2934C318240B0F180009ED78 /* QuizBrain.swift in Sources */,
 				2934C314240AFA270009ED78 /* Level.swift in Sources */,

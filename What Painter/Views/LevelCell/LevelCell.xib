@@ -25,11 +25,18 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqN-bC-l6h">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monoLiza" translatesAutoresizingMaskIntoConstraints="NO" id="6zG-q5-ePQ">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="6zG-q5-ePQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="bz2-7b-fjO"/>
                                                     <constraint firstAttribute="width" constant="100" id="mLG-Nd-RcW"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Cal-SM-emr">
+                                                <rect key="frame" x="20" y="66" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Gey-ZB-m8N"/>
+                                                    <constraint firstAttribute="width" constant="20" id="Jbj-9B-Bz2"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="dTb-L0-veH">
@@ -44,13 +51,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Asn-FE-Bpb"/>
                                                     <constraint firstAttribute="width" constant="20" id="wiV-WP-imZ"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Cal-SM-emr">
-                                                <rect key="frame" x="20" y="66" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="Gey-ZB-m8N"/>
-                                                    <constraint firstAttribute="width" constant="20" id="Jbj-9B-Bz2"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -95,12 +95,15 @@
             <connections>
                 <outlet property="levelImage" destination="6zG-q5-ePQ" id="bAu-qm-BIH"/>
                 <outlet property="levelTitle" destination="wXm-k2-MbE" id="T5V-zq-cuT"/>
+                <outlet property="star1" destination="Cal-SM-emr" id="Ncj-rC-XhH"/>
+                <outlet property="star2" destination="dTb-L0-veH" id="Vex-j9-97e"/>
+                <outlet property="star3" destination="Gh1-e4-oyo" id="Zxh-Hy-aGH"/>
             </connections>
             <point key="canvasLocation" x="-1089.1304347826087" y="-17.410714285714285"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="monoLiza" width="1080" height="1238"/>
-        <image name="star" width="2000" height="1915"/>
+        <image name="4" width="639.5" height="506.5"/>
+        <image name="star" width="666.5" height="638"/>
     </resources>
 </document>

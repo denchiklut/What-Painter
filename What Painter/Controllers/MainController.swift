@@ -31,7 +31,11 @@ class MainController: UICollectionViewController {
         layout.estimatedItemSize = CGSize(width: itemWidth, height: 140)
         
         levels = levelsManager.levels
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.collectionView.reloadData()
     }
     
     // MARK: UICollectionViewDataSource
@@ -48,15 +52,15 @@ class MainController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedLevel = indexPath.row
+        levelsManager.currentLevel = selectedLevel
         self.performSegue(withIdentifier: K.previewSegue, sender: self)
     }
     
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.previewSegue {
-            let levelData = levels[selectedLevel]
             let dc = segue.destination as! LevelPreviewController
             
-            dc.data = levelData
+            dc.levelsManager = levelsManager
         }
     }
 

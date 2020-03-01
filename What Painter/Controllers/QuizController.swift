@@ -10,7 +10,7 @@ import UIKit
 
 class QuizController: UIViewController {
     
-    var levelData: Level?
+    var levelsManager: LevelsManager?
     
     @IBOutlet weak var quizImage: UIImageView!
     @IBOutlet weak var bgImage: UIImageView!
@@ -43,14 +43,14 @@ class QuizController: UIViewController {
         vissualEffectView.effect = nil
         vissualEffectView.isHidden = true
         modalView.layer.cornerRadius = 5
-        
-        levelData?.quiz.delegate = self
+        levelsManager?.getCurrentLevel().quiz.delegate = self
+    
         updateUI()
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         if let answer = sender.currentTitle {
-            if levelData!.quiz.checkAnswer(a: answer) {
+            if levelsManager!.getCurrentLevel().quiz.checkAnswer(a: answer) {
                 sender.backgroundColor = UIColor.green
                 showModal()
             } else {
@@ -59,13 +59,13 @@ class QuizController: UIViewController {
         }
     }
     @IBAction func nextBtnPressed(_ sender: UIButton) {
-        levelData?.quiz.nextQuestion()
+        levelsManager?.getCurrentLevel().quiz.nextQuestion()
         updateUI()
         hideModal()
     }
     
     @objc func updateUI() {
-        if let answers = levelData?.quiz.getAnswers(), let image = levelData?.quiz.getImage() {
+        if let answers = levelsManager?.getCurrentLevel().quiz.getAnswers(), let image = levelsManager?.getCurrentLevel().quiz.getImage() {
             quizImage.image = UIImage(named: image)
             bgImage.image = UIImage(named: image)
             
@@ -88,7 +88,7 @@ class QuizController: UIViewController {
         modalView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         modalView.alpha = 0
         
-        if let imgName = levelData?.quiz.getImageName() {
+        if let imgName = levelsManager?.getCurrentLevel().quiz.getImageName() {
             imageName.text = imgName
         }
         
@@ -119,9 +119,15 @@ class QuizController: UIViewController {
 
 extension QuizController: QuizBrainDelegate {
     func quizDidFinished(_ sender: QuizBrain, with score: Int) {
-        levelData?.updateStars(score: score)
-        print("Level did finished with score \(levelData?.stars)")
+        levelsManager?.getCurrentLevel().updateStars(score: score)
         
-        navigationController?.popToRootViewController(animated: true)
+        performSegue(withIdentifier: K.resultsSegue, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.resultsSegue {
+            let dc = segue.destination as! ResultsController
+            dc.levelsManager = levelsManager
+        }
     }
 }

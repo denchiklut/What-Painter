@@ -40,11 +40,24 @@ let luvrQuiz = [
     Question(image: "21", answers: ["Рембрант", "Ван Дэйк", "Дюррер", "Вермеер"], correctAnswer: "Вермеер", name: "Астроном")
 ]
 
-struct LevelsManager {
+class LevelsManager {
+    var currentLevel = 0
     var levels = [
         Level(title: "Разминка", image: "1", quiz: QuizBrain(quiz: trainingQuiz)),
         Level(title: "Мировые шедеврвы", image: "2", quiz: QuizBrain(quiz: worldQuiz)),
         Level(title: "Франция", image: "3", quiz: QuizBrain(quiz: frenchQuiz)),
         Level(title: "Лувр", image: "4", quiz: QuizBrain(quiz: luvrQuiz)),
     ]
+    
+    func getCurrentLevel() -> Level {
+        return levels[currentLevel]
+    }
+    
+    func nextLevel() {
+        if currentLevel + 1 < levels.count {
+            currentLevel += 1
+        } else {
+            currentLevel = 0
+        }
+    }
 }

@@ -13,11 +13,22 @@ class LevelPreviewController: UIViewController {
     @IBOutlet weak var lavelTitile: UILabel!
     @IBOutlet weak var levelImage: UIImageView!
     
-    var data: Level?
+    var levelsManager: LevelsManager?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let data = levelsManager?.getCurrentLevel()
         guard let title = data?.title, let image = data?.image else {return}
         lavelTitile.text = title
         
@@ -32,10 +43,14 @@ class LevelPreviewController: UIViewController {
         self.performSegue(withIdentifier: K.playSegue, sender: self)
     }
     
+    @IBAction func homeButtonPressed(_ sender: UIButton) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.playSegue {
             let dc = segue.destination as! QuizController
-            dc.levelData = data
+            dc.levelsManager = levelsManager
         }
     }
     

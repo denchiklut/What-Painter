@@ -14,4 +14,7 @@ struct K {
     static let cellNibName = "LevelCell"
     static let previewSegue = "previewLevel"
     static let playSegue = "playLevel"
+    static let resultsSegue = "resultsLevel"
+    static let nextSegue = "nextLevel"
+    static let playAgainSegue = "playAgain"
 }
