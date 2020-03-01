@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		296F06A0240A4F4700E220BE /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F069F240A4F4700E220BE /* LevelData.swift */; };
+		2934C314240AFA270009ED78 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C313240AFA270009ED78 /* Level.swift */; };
+		2934C316240B0C070009ED78 /* LevelsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C315240B0C070009ED78 /* LevelsManager.swift */; };
+		2934C318240B0F180009ED78 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C317240B0F180009ED78 /* QuizBrain.swift */; };
+		2934C31A240B10B20009ED78 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C319240B10B20009ED78 /* Question.swift */; };
 		296F06A4240A69DF00E220BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F06A3240A69DF00E220BE /* Constants.swift */; };
 		296F06A6240A780600E220BE /* LevelPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F06A5240A780600E220BE /* LevelPreviewController.swift */; };
+		2970FC41240AD18C009B9DAD /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2970FC40240AD18C009B9DAD /* QuizController.swift */; };
 		29EE329E2409B8DA008547E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE329D2409B8DA008547E5 /* AppDelegate.swift */; };
 		29EE32A02409B8DA008547E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE329F2409B8DA008547E5 /* SceneDelegate.swift */; };
 		29EE32A52409B8DA008547E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29EE32A32409B8DA008547E5 /* Main.storyboard */; };
@@ -18,12 +22,17 @@
 		29EE32B42409BFC8008547E5 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE32B32409BFC8008547E5 /* MainController.swift */; };
 		29EE32B72409C06B008547E5 /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE32B52409C06B008547E5 /* LevelCell.swift */; };
 		29EE32B82409C06B008547E5 /* LevelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29EE32B62409C06B008547E5 /* LevelCell.xib */; };
+		683DC3E1888DE55B9A14F430 /* libPods-What Painter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FF9272CA129C09BFAF79D8 /* libPods-What Painter.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		296F069F240A4F4700E220BE /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
+		2934C313240AFA270009ED78 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		2934C315240B0C070009ED78 /* LevelsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsManager.swift; sourceTree = "<group>"; };
+		2934C317240B0F180009ED78 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		2934C319240B10B20009ED78 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		296F06A3240A69DF00E220BE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		296F06A5240A780600E220BE /* LevelPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPreviewController.swift; sourceTree = "<group>"; };
+		2970FC40240AD18C009B9DAD /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		29EE329A2409B8DA008547E5 /* What Painter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What Painter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29EE329D2409B8DA008547E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29EE329F2409B8DA008547E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +43,9 @@
 		29EE32B32409BFC8008547E5 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		29EE32B52409C06B008547E5 /* LevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
 		29EE32B62409C06B008547E5 /* LevelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelCell.xib; sourceTree = "<group>"; };
+		75FF9272CA129C09BFAF79D8 /* libPods-What Painter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-What Painter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6351529AC64F46E34F63FED /* Pods-What Painter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What Painter.release.xcconfig"; path = "Target Support Files/Pods-What Painter/Pods-What Painter.release.xcconfig"; sourceTree = "<group>"; };
+		F654910C5E2D67B6D6C40055 /* Pods-What Painter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What Painter.debug.xcconfig"; path = "Target Support Files/Pods-What Painter/Pods-What Painter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				683DC3E1888DE55B9A14F430 /* libPods-What Painter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +63,10 @@
 		296F06A1240A4F4B00E220BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				296F069F240A4F4700E220BE /* LevelData.swift */,
+				2934C313240AFA270009ED78 /* Level.swift */,
+				2934C315240B0C070009ED78 /* LevelsManager.swift */,
+				2934C317240B0F180009ED78 /* QuizBrain.swift */,
+				2934C319240B10B20009ED78 /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -69,6 +85,8 @@
 			children = (
 				29EE329C2409B8DA008547E5 /* What Painter */,
 				29EE329B2409B8DA008547E5 /* Products */,
+				5A21986CD8EB8EB0BF00BFEC /* Pods */,
+				5B029DE95DE96101B407A25D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,8 +128,26 @@
 			children = (
 				29EE32B32409BFC8008547E5 /* MainController.swift */,
 				296F06A5240A780600E220BE /* LevelPreviewController.swift */,
+				2970FC40240AD18C009B9DAD /* QuizController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5A21986CD8EB8EB0BF00BFEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F654910C5E2D67B6D6C40055 /* Pods-What Painter.debug.xcconfig */,
+				C6351529AC64F46E34F63FED /* Pods-What Painter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5B029DE95DE96101B407A25D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75FF9272CA129C09BFAF79D8 /* libPods-What Painter.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +157,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29EE32AE2409B8DC008547E5 /* Build configuration list for PBXNativeTarget "What Painter" */;
 			buildPhases = (
+				7AF6A6DE319A9F9188FDAB4A /* [CP] Check Pods Manifest.lock */,
 				29EE32962409B8DA008547E5 /* Sources */,
 				29EE32972409B8DA008547E5 /* Frameworks */,
 				29EE32982409B8DA008547E5 /* Resources */,
@@ -181,18 +218,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7AF6A6DE319A9F9188FDAB4A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-What Painter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		29EE32962409B8DA008547E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2934C316240B0C070009ED78 /* LevelsManager.swift in Sources */,
 				296F06A6240A780600E220BE /* LevelPreviewController.swift in Sources */,
+				2970FC41240AD18C009B9DAD /* QuizController.swift in Sources */,
 				29EE32B42409BFC8008547E5 /* MainController.swift in Sources */,
 				29EE329E2409B8DA008547E5 /* AppDelegate.swift in Sources */,
-				296F06A0240A4F4700E220BE /* LevelData.swift in Sources */,
 				29EE32B72409C06B008547E5 /* LevelCell.swift in Sources */,
 				29EE32A02409B8DA008547E5 /* SceneDelegate.swift in Sources */,
+				2934C31A240B10B20009ED78 /* Question.swift in Sources */,
 				296F06A4240A69DF00E220BE /* Constants.swift in Sources */,
+				2934C318240B0F180009ED78 /* QuizBrain.swift in Sources */,
+				2934C314240AFA270009ED78 /* Level.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +400,7 @@
 		};
 		29EE32AF2409B8DC008547E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F654910C5E2D67B6D6C40055 /* Pods-What Painter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -346,12 +413,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.denchiklut.What-Painter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		29EE32B02409B8DC008547E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6351529AC64F46E34F63FED /* Pods-What Painter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -364,7 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.denchiklut.What-Painter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

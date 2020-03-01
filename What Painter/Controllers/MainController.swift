@@ -7,17 +7,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 private let reuseIdentifier = K.cellIdentifier
 
 class MainController: UICollectionViewController {
     
-    var levels: [LevelData] = [
-        LevelData(title: "Разминка", image: "1"),
-        LevelData(title: "Мировые шедевры", image: "2"),
-        LevelData(title: "Франция", image: "3"),
-        LevelData(title: "Лувр", image: "4")
-    ]
+    let realm = try! Realm()
+    var levelsManager = LevelsManager()
+
+    var levels = [Level]()
     
     var selectedLevel = 0
     
@@ -30,6 +29,9 @@ class MainController: UICollectionViewController {
         
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.estimatedItemSize = CGSize(width: itemWidth, height: 140)
+        
+        levels = levelsManager.levels
+
     }
     
     // MARK: UICollectionViewDataSource
@@ -57,4 +59,5 @@ class MainController: UICollectionViewController {
             dc.data = levelData
         }
     }
+
 }

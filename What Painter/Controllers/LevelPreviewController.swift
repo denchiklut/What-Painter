@@ -13,7 +13,7 @@ class LevelPreviewController: UIViewController {
     @IBOutlet weak var lavelTitile: UILabel!
     @IBOutlet weak var levelImage: UIImageView!
     
-    var data: LevelData?
+    var data: Level?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,14 @@ class LevelPreviewController: UIViewController {
     }
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
-        
+        self.performSegue(withIdentifier: K.playSegue, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.playSegue {
+            let dc = segue.destination as! QuizController
+            dc.levelData = data
+        }
     }
     
 }

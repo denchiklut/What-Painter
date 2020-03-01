@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct LevelData {
-    let title: String
-    let image: String
+class Level: Object {
+    @objc dynamic var title: String = ""
+    @objc dynamic var image: String = ""
+    
+    let images = List<Paintings>()
 }

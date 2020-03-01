@@ -13,7 +13,7 @@ class LevelCell: UICollectionViewCell {
     @IBOutlet weak var levelImage: UIImageView!
     @IBOutlet weak var levelTitle: UILabel!
     
-    var data: LevelData? {
+    var data: Level? {
         didSet {
             guard let imageName = data?.image, let title = data?.title  else {return}
             levelImage.image = UIImage(named: imageName)

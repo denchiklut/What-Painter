@@ -13,4 +13,5 @@ struct K {
     static let cellIdentifier = "ReusableCell"
     static let cellNibName = "LevelCell"
     static let previewSegue = "previewLevel"
+    static let playSegue = "playLevel"
 }
