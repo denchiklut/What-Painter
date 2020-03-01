@@ -59,10 +59,9 @@ class QuizController: UIViewController {
         }
     }
     @IBAction func nextBtnPressed(_ sender: UIButton) {
-        hideModal()
         levelData?.quiz.nextQuestion()
-        
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
+        updateUI()
+        hideModal()
     }
     
     @objc func updateUI() {
@@ -122,5 +121,7 @@ extension QuizController: QuizBrainDelegate {
     func quizDidFinished(_ sender: QuizBrain, with score: Int) {
         levelData?.updateStars(score: score)
         print("Level did finished with score \(levelData?.stars)")
+        
+        navigationController?.popToRootViewController(animated: true)
     }
 }

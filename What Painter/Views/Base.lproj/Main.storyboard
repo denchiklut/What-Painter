@@ -289,9 +289,9 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zf1-xG-ffj">
-                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="1378"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hj9-Iz-n4n">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="1378"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>

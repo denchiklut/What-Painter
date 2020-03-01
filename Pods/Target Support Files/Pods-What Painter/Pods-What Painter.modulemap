@@ -1,0 +1,6 @@
+module Pods_What_Painter {
+  umbrella header "Pods-What Painter-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -40,6 +40,7 @@ class QuizBrain {
             current += 1
         } else {
             self.delegate?.quizDidFinished(self, with: getScore())
+            reset()
         }
     }
     
@@ -54,5 +55,10 @@ class QuizBrain {
     
     func getScore() -> Int {
         return quiz.count - errors.count
+    }
+    
+    func reset() {
+        current = 0
+        errors =  Set<Int>()
     }
 }
