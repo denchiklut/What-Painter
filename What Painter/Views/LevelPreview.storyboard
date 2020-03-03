@@ -37,7 +37,7 @@
                                         <rect key="frame" x="0.0" y="293.5" width="414" height="289"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="5WF-eE-LK1">
-                                                <rect key="frame" x="62.5" y="0.0" width="289" height="289"/>
+                                                <rect key="frame" x="62.5" y="0.0" width="289" height="289.00000000000011"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="5WF-eE-LK1" secondAttribute="height" multiplier="1:1" id="LQF-Xu-t0l"/>
                                                 </constraints>
@@ -58,7 +58,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBG-Yt-74g">
                                                         <rect key="frame" x="0.0" y="0.0" width="182" height="52"/>
-                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="0.97037819505943745" green="0.92727728663952469" blue="1" alpha="0.15105950342465754" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="YKc-9y-ZJe"/>
                                                         </constraints>
@@ -71,7 +71,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCc-Eo-uYX">
                                                         <rect key="frame" x="192" y="0.0" width="182" height="52"/>
-                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="0.97037819510000001" green="0.92727728659999997" blue="1" alpha="0.15105950339999999" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="TIY-Zv-OKB"/>
                                                         </constraints>

@@ -1,8 +1,8 @@
 //
-//  MainMenuController.swift
+//  LevelsController.swift
 //  What Painter
 //
-//  Created by Александров Денис Александрович on 29.02.2020.
+//  Created by Александров Денис Александрович on 03.03.2020.
 //  Copyright © 2020 Александров Денис Александрович. All rights reserved.
 //
 
@@ -11,25 +11,26 @@ import RealmSwift
 
 private let reuseIdentifier = K.cellIdentifier
 
-class MainController: UICollectionViewController {
+class LevelsController: UICollectionViewController {
     
     let realm = try! Realm()
     var levelsManager = LevelsManager()
-
+    
     var levels = [Level]()
     
     var selectedLevel = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.collectionView!.register(UINib(nibName: K.cellNibName, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         
-        let collectionViewWidth =  collectionView?.frame.width
+        let collectionViewWidth = collectionView?.frame.width
         let itemWidth = (collectionViewWidth! - 10) / 3
         
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.estimatedItemSize = CGSize(width: itemWidth, height: 140)
-        
+                
         levels = levelsManager.levels
     }
     
@@ -37,6 +38,7 @@ class MainController: UICollectionViewController {
         super.viewWillAppear(true)
         self.collectionView.reloadData()
         navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: UICollectionViewDataSource
@@ -57,12 +59,12 @@ class MainController: UICollectionViewController {
         self.performSegue(withIdentifier: K.previewSegue, sender: self)
     }
     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.previewSegue {
             let dc = segue.destination as! LevelPreviewController
             
             dc.levelsManager = levelsManager
         }
     }
-
+    
 }

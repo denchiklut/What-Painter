@@ -17,12 +17,12 @@ class LevelPreviewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func viewDidLoad() {
@@ -36,7 +36,6 @@ class LevelPreviewController: UIViewController {
         levelImage.layer.borderColor = UIColor.white.cgColor
         levelImage.layer.cornerRadius = levelImage.frame.size.height / 2
         levelImage.layer.borderWidth = 2
-
     }
     
     @IBAction func startButtonPressed(_ sender: UIButton) {

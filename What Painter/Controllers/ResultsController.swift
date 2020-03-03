@@ -18,16 +18,6 @@ class ResultsController: UIViewController {
     @IBOutlet weak var star3: UIImageView!
     @IBOutlet weak var levelImage: UIImageView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,9 +40,8 @@ class ResultsController: UIViewController {
                 star3.isHidden = true
             }
         }
-        
-        
     }
+    
     @IBAction func againButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: K.playAgainSegue, sender: self)
     }

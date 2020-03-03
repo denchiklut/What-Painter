@@ -78,7 +78,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afu-dD-mBI">
                                                         <rect key="frame" x="0.0" y="0.0" width="121.5" height="52"/>
-                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="0.97037819510000001" green="0.92727728659999997" blue="1" alpha="0.15105950339999999" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="ATB-y3-PUG"/>
                                                         </constraints>
@@ -91,7 +91,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSB-se-kj9">
                                                         <rect key="frame" x="126.5" y="0.0" width="121" height="52"/>
-                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="0.97037819510000001" green="0.92727728659999997" blue="1" alpha="0.15105950339999999" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="CgC-9E-hew"/>
                                                         </constraints>
@@ -104,7 +104,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVQ-Ii-BaN">
                                                         <rect key="frame" x="252.5" y="0.0" width="121.5" height="52"/>
-                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="0.97037819510000001" green="0.92727728659999997" blue="1" alpha="0.15105950339999999" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="gFu-SD-F65"/>
                                                         </constraints>
