@@ -36,6 +36,7 @@ class MainController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.collectionView.reloadData()
+        navigationController?.isNavigationBarHidden = false
     }
     
     // MARK: UICollectionViewDataSource
