@@ -11,6 +11,7 @@
 		2934C316240B0C070009ED78 /* LevelsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C315240B0C070009ED78 /* LevelsManager.swift */; };
 		2934C318240B0F180009ED78 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C317240B0F180009ED78 /* QuizBrain.swift */; };
 		2934C31A240B10B20009ED78 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C319240B10B20009ED78 /* Question.swift */; };
+		29618BCE24118DA200298B9F /* PaintersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29618BCD24118DA200298B9F /* PaintersCollectionCell.swift */; };
 		2963A5BB240EE36B006E1ED7 /* LevelPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2963A5BA240EE36B006E1ED7 /* LevelPreview.storyboard */; };
 		2963A5BD240EE52E006E1ED7 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2963A5BC240EE52E006E1ED7 /* Quiz.storyboard */; };
 		2963A5BF240EE659006E1ED7 /* Results.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2963A5BE240EE659006E1ED7 /* Results.storyboard */; };
@@ -21,6 +22,8 @@
 		296F06A6240A780600E220BE /* LevelPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F06A5240A780600E220BE /* LevelPreviewController.swift */; };
 		296FB70F240C42A0008A8A5B /* ResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB70E240C42A0008A8A5B /* ResultsController.swift */; };
 		2970FC41240AD18C009B9DAD /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2970FC40240AD18C009B9DAD /* QuizController.swift */; };
+		29BD75AA2411958B0020058C /* Painter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD75A92411958B0020058C /* Painter.swift */; };
+		29BD75AC241199990020058C /* LearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD75AB241199990020058C /* LearningViewController.swift */; };
 		29EE329E2409B8DA008547E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE329D2409B8DA008547E5 /* AppDelegate.swift */; };
 		29EE32A02409B8DA008547E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE329F2409B8DA008547E5 /* SceneDelegate.swift */; };
 		29EE32A52409B8DA008547E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29EE32A32409B8DA008547E5 /* Main.storyboard */; };
@@ -36,6 +39,7 @@
 		2934C315240B0C070009ED78 /* LevelsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsManager.swift; sourceTree = "<group>"; };
 		2934C317240B0F180009ED78 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		2934C319240B10B20009ED78 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		29618BCD24118DA200298B9F /* PaintersCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintersCollectionCell.swift; sourceTree = "<group>"; };
 		2963A5BA240EE36B006E1ED7 /* LevelPreview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LevelPreview.storyboard; sourceTree = "<group>"; };
 		2963A5BC240EE52E006E1ED7 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		2963A5BE240EE659006E1ED7 /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 		296F06A5240A780600E220BE /* LevelPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPreviewController.swift; sourceTree = "<group>"; };
 		296FB70E240C42A0008A8A5B /* ResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsController.swift; sourceTree = "<group>"; };
 		2970FC40240AD18C009B9DAD /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
+		29BD75A92411958B0020058C /* Painter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painter.swift; sourceTree = "<group>"; };
+		29BD75AB241199990020058C /* LearningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningViewController.swift; sourceTree = "<group>"; };
 		29EE329A2409B8DA008547E5 /* What Painter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What Painter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29EE329D2409B8DA008547E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29EE329F2409B8DA008547E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29618BCC24118D7C00298B9F /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				29618BCD24118DA200298B9F /* PaintersCollectionCell.swift */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
 		296F06A1240A4F4B00E220BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +93,7 @@
 				2934C315240B0C070009ED78 /* LevelsManager.swift */,
 				2934C317240B0F180009ED78 /* QuizBrain.swift */,
 				2934C319240B10B20009ED78 /* Question.swift */,
+				29BD75A92411958B0020058C /* Painter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -143,10 +158,12 @@
 		29EE32B22409BAE4008547E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				29618BCC24118D7C00298B9F /* Collections */,
 				296F06A5240A780600E220BE /* LevelPreviewController.swift */,
 				2970FC40240AD18C009B9DAD /* QuizController.swift */,
 				296FB70E240C42A0008A8A5B /* ResultsController.swift */,
 				2963A5C0240EEEAE006E1ED7 /* LevelsController.swift */,
+				29BD75AB241199990020058C /* LearningViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -274,13 +291,16 @@
 				2934C316240B0C070009ED78 /* LevelsManager.swift in Sources */,
 				296F06A6240A780600E220BE /* LevelPreviewController.swift in Sources */,
 				2970FC41240AD18C009B9DAD /* QuizController.swift in Sources */,
+				29618BCE24118DA200298B9F /* PaintersCollectionCell.swift in Sources */,
 				29EE329E2409B8DA008547E5 /* AppDelegate.swift in Sources */,
+				29BD75AA2411958B0020058C /* Painter.swift in Sources */,
 				29EE32B72409C06B008547E5 /* LevelCell.swift in Sources */,
 				29EE32A02409B8DA008547E5 /* SceneDelegate.swift in Sources */,
 				2934C31A240B10B20009ED78 /* Question.swift in Sources */,
 				296FB70F240C42A0008A8A5B /* ResultsController.swift in Sources */,
 				2963A5C1240EEEAE006E1ED7 /* LevelsController.swift in Sources */,
 				296F06A4240A69DF00E220BE /* Constants.swift in Sources */,
+				29BD75AC241199990020058C /* LearningViewController.swift in Sources */,
 				2934C318240B0F180009ED78 /* QuizBrain.swift in Sources */,
 				2934C314240AFA270009ED78 /* Level.swift in Sources */,
 			);

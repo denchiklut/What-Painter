@@ -1,40 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n1u-K9-tHI">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Learning View Controller-->
         <scene sceneID="q7E-VR-Ixw">
             <objects>
-                <viewController id="n1u-K9-tHI" sceneMemberID="viewController">
+                <viewController id="n1u-K9-tHI" customClass="LearningViewController" customModule="What_Painter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n1c-Vn-God">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Helo world" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmC-y9-0rd">
-                                <rect key="frame" x="108" y="425" width="178" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Painters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmC-y9-0rd">
+                                <rect key="frame" x="20" y="44" width="134" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cif-08-IPs">
+                                <rect key="frame" x="0.0" y="107" width="414" height="210"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="lc0-pD-5sl"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="10" id="M9k-4v-Ith">
+                                    <size key="itemSize" width="120" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="paintersCollectionCell" id="EYa-5i-ahD" customClass="PaintersCollectionCell" customModule="What_Painter" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="10" width="120" height="190"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7a1-KG-Tjd">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="190"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="iuk-KA-DLZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="190"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="Eif-N2-JGM"/>
+                                                        <constraint firstAttribute="height" constant="200" id="vch-Tz-nQA"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkg-cb-aCN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="190"/>
+                                                    <color key="backgroundColor" white="0.10223137842465753" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Леонардо да Винчи" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuk-VV-Mkp">
+                                                    <rect key="frame" x="6" y="133" width="108" height="37"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="iuk-KA-DLZ" secondAttribute="trailing" id="3f5-eq-mWF"/>
+                                                <constraint firstItem="yuk-VV-Mkp" firstAttribute="leading" secondItem="7a1-KG-Tjd" secondAttribute="leading" constant="6" id="TMp-Te-pa3"/>
+                                                <constraint firstItem="iuk-KA-DLZ" firstAttribute="top" secondItem="7a1-KG-Tjd" secondAttribute="top" id="UhI-cF-BXr"/>
+                                                <constraint firstAttribute="bottom" secondItem="yuk-VV-Mkp" secondAttribute="bottom" constant="20" id="X5g-WP-fkr"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vkg-cb-aCN" secondAttribute="trailing" id="Zcr-RA-n2U"/>
+                                                <constraint firstAttribute="trailing" secondItem="yuk-VV-Mkp" secondAttribute="trailing" constant="6" id="d3L-aH-zTe"/>
+                                                <constraint firstAttribute="bottom" secondItem="iuk-KA-DLZ" secondAttribute="bottom" id="dUs-7y-3HX"/>
+                                                <constraint firstItem="Vkg-cb-aCN" firstAttribute="leading" secondItem="7a1-KG-Tjd" secondAttribute="leading" id="e0j-FO-453"/>
+                                                <constraint firstItem="Vkg-cb-aCN" firstAttribute="top" secondItem="7a1-KG-Tjd" secondAttribute="top" id="g9u-pn-Kt9"/>
+                                                <constraint firstAttribute="bottom" secondItem="Vkg-cb-aCN" secondAttribute="bottom" id="ji4-DW-crf"/>
+                                                <constraint firstItem="iuk-KA-DLZ" firstAttribute="leading" secondItem="7a1-KG-Tjd" secondAttribute="leading" id="rbx-05-Ccx"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="120" height="190"/>
+                                        <connections>
+                                            <outlet property="backgroundColorView" destination="Vkg-cb-aCN" id="qTE-h0-ZTA"/>
+                                            <outlet property="paintingImageView" destination="iuk-KA-DLZ" id="uGr-y9-Qg2"/>
+                                            <outlet property="paintingTitleLabel" destination="yuk-VV-Mkp" id="g20-Uq-wkq"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Cif-08-IPs" firstAttribute="top" secondItem="wmC-y9-0rd" secondAttribute="bottom" constant="16" id="8dh-wf-9Bm"/>
+                            <constraint firstItem="wmC-y9-0rd" firstAttribute="leading" secondItem="EDi-0f-to1" secondAttribute="leading" constant="20" id="Djy-hl-XAw"/>
+                            <constraint firstAttribute="trailing" secondItem="Cif-08-IPs" secondAttribute="trailing" id="JPJ-RY-DSu"/>
+                            <constraint firstItem="Cif-08-IPs" firstAttribute="leading" secondItem="n1c-Vn-God" secondAttribute="leading" id="hY9-NR-yMx"/>
+                            <constraint firstItem="wmC-y9-0rd" firstAttribute="top" secondItem="EDi-0f-to1" secondAttribute="top" id="vTV-FM-woC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EDi-0f-to1"/>
                     </view>
                     <tabBarItem key="tabBarItem" image="rectangle.on.rectangle" catalog="system" selectedImage="rectangle.fill.on.rectangle.fill" id="x02-sU-WIO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="paintersCollectionView" destination="Cif-08-IPs" id="wLx-OK-HeQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvT-fd-C2S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-117" y="8"/>
+            <point key="canvasLocation" x="-117.39130434782609" y="7.3660714285714279"/>
         </scene>
     </scenes>
     <resources>
+        <image name="1" width="341" height="508.5"/>
         <image name="rectangle.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
         <image name="rectangle.on.rectangle" catalog="system" width="64" height="48"/>
     </resources>

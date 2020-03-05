@@ -10,6 +10,7 @@
         <scene sceneID="mUu-tV-TNy">
             <objects>
                 <tabBarController id="Fgc-4n-NSA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="csS-vz-hfd"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jf8-ch-VTm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -23,7 +24,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yb-ND-XYx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-412" y="-806"/>
+            <point key="canvasLocation" x="-194" y="-828"/>
         </scene>
         <!--Levels-->
         <scene sceneID="rDT-f2-tW6">
@@ -33,17 +34,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1W2-i4-jxe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-773" y="-357"/>
+            <point key="canvasLocation" x="-540" y="-358"/>
         </scene>
         <!--Learning-->
         <scene sceneID="VNE-9e-s1u">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aSs-bu-gC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Learning" id="3mc-Ur-PvT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="ZRc-8g-Qlf"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aSs-bu-gC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="-357"/>
+            <point key="canvasLocation" x="150" y="-358"/>
         </scene>
     </scenes>
 </document>
