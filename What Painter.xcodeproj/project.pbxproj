@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29138FC82413A7AD00785968 /* PainterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29138FC62413A7AD00785968 /* PainterCell.swift */; };
+		29138FC92413A7AD00785968 /* PainterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29138FC72413A7AD00785968 /* PainterCell.xib */; };
 		2934C314240AFA270009ED78 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C313240AFA270009ED78 /* Level.swift */; };
 		2934C316240B0C070009ED78 /* LevelsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C315240B0C070009ED78 /* LevelsManager.swift */; };
 		2934C318240B0F180009ED78 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C317240B0F180009ED78 /* QuizBrain.swift */; };
 		2934C31A240B10B20009ED78 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C319240B10B20009ED78 /* Question.swift */; };
-		29618BCE24118DA200298B9F /* PaintersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29618BCD24118DA200298B9F /* PaintersCollectionCell.swift */; };
 		2963A5BB240EE36B006E1ED7 /* LevelPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2963A5BA240EE36B006E1ED7 /* LevelPreview.storyboard */; };
 		2963A5BD240EE52E006E1ED7 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2963A5BC240EE52E006E1ED7 /* Quiz.storyboard */; };
 		2963A5BF240EE659006E1ED7 /* Results.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2963A5BE240EE659006E1ED7 /* Results.storyboard */; };
@@ -35,11 +36,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29138FC62413A7AD00785968 /* PainterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainterCell.swift; sourceTree = "<group>"; };
+		29138FC72413A7AD00785968 /* PainterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PainterCell.xib; sourceTree = "<group>"; };
 		2934C313240AFA270009ED78 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		2934C315240B0C070009ED78 /* LevelsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsManager.swift; sourceTree = "<group>"; };
 		2934C317240B0F180009ED78 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		2934C319240B10B20009ED78 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		29618BCD24118DA200298B9F /* PaintersCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintersCollectionCell.swift; sourceTree = "<group>"; };
 		2963A5BA240EE36B006E1ED7 /* LevelPreview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LevelPreview.storyboard; sourceTree = "<group>"; };
 		2963A5BC240EE52E006E1ED7 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
 		2963A5BE240EE659006E1ED7 /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
@@ -78,12 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		29618BCC24118D7C00298B9F /* Collections */ = {
+		29138FC12413A74600785968 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				29618BCD24118DA200298B9F /* PaintersCollectionCell.swift */,
+				296F06A2240A5DCD00E220BE /* LevelCell */,
+				29138FCA2413A7BA00785968 /* PainterCell */,
 			);
-			path = Collections;
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		29138FCA2413A7BA00785968 /* PainterCell */ = {
+			isa = PBXGroup;
+			children = (
+				29138FC62413A7AD00785968 /* PainterCell.swift */,
+				29138FC72413A7AD00785968 /* PainterCell.xib */,
+			);
+			path = PainterCell;
 			sourceTree = "<group>";
 		};
 		296F06A1240A4F4B00E220BE /* Models */ = {
@@ -144,7 +156,7 @@
 		29EE32B12409BADB008547E5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				296F06A2240A5DCD00E220BE /* LevelCell */,
+				29138FC12413A74600785968 /* Cells */,
 				29EE32A32409B8DA008547E5 /* Main.storyboard */,
 				2963A5BA240EE36B006E1ED7 /* LevelPreview.storyboard */,
 				2963A5BC240EE52E006E1ED7 /* Quiz.storyboard */,
@@ -158,7 +170,6 @@
 		29EE32B22409BAE4008547E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				29618BCC24118D7C00298B9F /* Collections */,
 				296F06A5240A780600E220BE /* LevelPreviewController.swift */,
 				2970FC40240AD18C009B9DAD /* QuizController.swift */,
 				296FB70E240C42A0008A8A5B /* ResultsController.swift */,
@@ -251,6 +262,7 @@
 				2963A5C3240EEEC4006E1ED7 /* Levels.storyboard in Resources */,
 				29EE32A72409B8DC008547E5 /* Assets.xcassets in Resources */,
 				29EE32B82409C06B008547E5 /* LevelCell.xib in Resources */,
+				29138FC92413A7AD00785968 /* PainterCell.xib in Resources */,
 				29EE32A52409B8DA008547E5 /* Main.storyboard in Resources */,
 				2963A5BD240EE52E006E1ED7 /* Quiz.storyboard in Resources */,
 			);
@@ -291,7 +303,6 @@
 				2934C316240B0C070009ED78 /* LevelsManager.swift in Sources */,
 				296F06A6240A780600E220BE /* LevelPreviewController.swift in Sources */,
 				2970FC41240AD18C009B9DAD /* QuizController.swift in Sources */,
-				29618BCE24118DA200298B9F /* PaintersCollectionCell.swift in Sources */,
 				29EE329E2409B8DA008547E5 /* AppDelegate.swift in Sources */,
 				29BD75AA2411958B0020058C /* Painter.swift in Sources */,
 				29EE32B72409C06B008547E5 /* LevelCell.swift in Sources */,
@@ -303,6 +314,7 @@
 				29BD75AC241199990020058C /* LearningViewController.swift in Sources */,
 				2934C318240B0F180009ED78 /* QuizBrain.swift in Sources */,
 				2934C314240AFA270009ED78 /* Level.swift in Sources */,
+				29138FC82413A7AD00785968 /* PainterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

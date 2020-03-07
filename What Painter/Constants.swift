@@ -17,5 +17,6 @@ struct K {
     static let resultsSegue = "resultsLevel"
     static let nextSegue = "nextLevel"
     static let playAgainSegue = "playAgain"
-    static let paintersCollectionCell = "paintersCollectionCell"
+    static let painterCell = "PainterCell"
+    static let paintersCellIdentifire = "paintersCollectionCell"
 }

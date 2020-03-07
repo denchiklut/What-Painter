@@ -23,63 +23,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cif-08-IPs">
-                                <rect key="frame" x="0.0" y="107" width="414" height="210"/>
+                                <rect key="frame" x="0.0" y="107" width="414" height="220"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="lc0-pD-5sl"/>
+                                    <constraint firstAttribute="height" constant="220" id="lc0-pD-5sl"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="30" minimumInteritemSpacing="10" id="M9k-4v-Ith">
-                                    <size key="itemSize" width="120" height="200"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="M9k-4v-Ith">
+                                    <size key="itemSize" width="0.0" height="0.0"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="75" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="paintersCollectionCell" id="EYa-5i-ahD" customClass="PaintersCollectionCell" customModule="What_Painter" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="10" width="120" height="190"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="paintersCollectionCell" id="EYa-5i-ahD" customClass="PainterCell" customModule="What_Painter" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="15" width="139" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7a1-KG-Tjd">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="190"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DUM-n9-Qc7">
+                                            <rect key="frame" x="0.0" y="0.0" width="139" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="iuk-KA-DLZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="190"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="Eif-N2-JGM"/>
-                                                        <constraint firstAttribute="height" constant="200" id="vch-Tz-nQA"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vkg-cb-aCN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="190"/>
-                                                    <color key="backgroundColor" white="0.10223137842465753" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Леонардо да Винчи" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuk-VV-Mkp">
-                                                    <rect key="frame" x="6" y="133" width="108" height="37"/>
-                                                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="iuk-KA-DLZ" secondAttribute="trailing" id="3f5-eq-mWF"/>
-                                                <constraint firstItem="yuk-VV-Mkp" firstAttribute="leading" secondItem="7a1-KG-Tjd" secondAttribute="leading" constant="6" id="TMp-Te-pa3"/>
-                                                <constraint firstItem="iuk-KA-DLZ" firstAttribute="top" secondItem="7a1-KG-Tjd" secondAttribute="top" id="UhI-cF-BXr"/>
-                                                <constraint firstAttribute="bottom" secondItem="yuk-VV-Mkp" secondAttribute="bottom" constant="20" id="X5g-WP-fkr"/>
-                                                <constraint firstAttribute="trailing" secondItem="Vkg-cb-aCN" secondAttribute="trailing" id="Zcr-RA-n2U"/>
-                                                <constraint firstAttribute="trailing" secondItem="yuk-VV-Mkp" secondAttribute="trailing" constant="6" id="d3L-aH-zTe"/>
-                                                <constraint firstAttribute="bottom" secondItem="iuk-KA-DLZ" secondAttribute="bottom" id="dUs-7y-3HX"/>
-                                                <constraint firstItem="Vkg-cb-aCN" firstAttribute="leading" secondItem="7a1-KG-Tjd" secondAttribute="leading" id="e0j-FO-453"/>
-                                                <constraint firstItem="Vkg-cb-aCN" firstAttribute="top" secondItem="7a1-KG-Tjd" secondAttribute="top" id="g9u-pn-Kt9"/>
-                                                <constraint firstAttribute="bottom" secondItem="Vkg-cb-aCN" secondAttribute="bottom" id="ji4-DW-crf"/>
-                                                <constraint firstItem="iuk-KA-DLZ" firstAttribute="leading" secondItem="7a1-KG-Tjd" secondAttribute="leading" id="rbx-05-Ccx"/>
-                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="120" height="190"/>
-                                        <connections>
-                                            <outlet property="backgroundColorView" destination="Vkg-cb-aCN" id="qTE-h0-ZTA"/>
-                                            <outlet property="paintingImageView" destination="iuk-KA-DLZ" id="uGr-y9-Qg2"/>
-                                            <outlet property="paintingTitleLabel" destination="yuk-VV-Mkp" id="g20-Uq-wkq"/>
-                                        </connections>
+                                        <size key="customSize" width="139" height="190"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -106,7 +69,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="341" height="508.5"/>
         <image name="rectangle.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
         <image name="rectangle.on.rectangle" catalog="system" width="64" height="48"/>
     </resources>

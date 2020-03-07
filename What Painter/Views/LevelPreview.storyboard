@@ -10,7 +10,7 @@
         <!--Level Preview Controller-->
         <scene sceneID="TB8-EQ-V1y">
             <objects>
-                <viewController id="3W2-Cu-ddp" customClass="LevelPreviewController" customModule="What_Painter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" hidesBottomBarWhenPushed="YES" id="3W2-Cu-ddp" customClass="LevelPreviewController" customModule="What_Painter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="odW-6I-Mbd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,6 +111,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QKb-PA-bbo"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="QFF-l0-xaa"/>
                     <connections>
                         <outlet property="lavelTitile" destination="peX-ml-3rE" id="Phd-of-rJD"/>

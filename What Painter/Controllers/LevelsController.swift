@@ -22,7 +22,7 @@ class LevelsController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: nil, action: nil)
         self.collectionView!.register(UINib(nibName: K.cellNibName, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         
         let collectionViewWidth = collectionView?.frame.width
