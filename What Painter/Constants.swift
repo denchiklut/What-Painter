@@ -19,4 +19,9 @@ struct K {
     static let playAgainSegue = "playAgain"
     static let painterCell = "PainterCell"
     static let paintersCellIdentifire = "paintersCollectionCell"
+    static let descriptoinSegue = "descriptoinSegue"
+    static let reusablePaintingCell = "paintingIdentifire"
+    static let paintingCell = "PaintingCell"
+    static let detailHeader = "DetailHeader"
+    static let detailHeaderIdentofire = "detailHeaderIdentofire"
 }

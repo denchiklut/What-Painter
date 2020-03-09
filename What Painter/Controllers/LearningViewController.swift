@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LearningViewController: UIViewController {
+class LearningViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var paintersCollectionView: UICollectionView!
     
     var painters = Painter.fetchPainters()
@@ -16,10 +16,23 @@ class LearningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         paintersCollectionView.dataSource = self
+        paintersCollectionView.delegate = self
         paintersCollectionView.register(UINib(nibName: K.painterCell, bundle: nil), forCellWithReuseIdentifier: K.paintersCellIdentifire)
         
         let layout = paintersCollectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         layout.estimatedItemSize = CGSize(width: 140, height: 220)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.descriptoinSegue, sender: self)
     }
 }
 
