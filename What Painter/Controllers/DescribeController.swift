@@ -17,18 +17,18 @@ class DescribeController: UICollectionViewController {
 //    @IBOutlet weak var descriptionImage: UIImageView!
     
     var paintings = [
-        Painting(image: "1", painter: "a"),
-        Painting(image: "2", painter: "b"),
-        Painting(image: "3", painter: "c"),
-        Painting(image: "4", painter: "d"),
-        Painting(image: "5", painter: "e"),
-        Painting(image: "6", painter: "f"),
-        Painting(image: "1", painter: "a"),
-        Painting(image: "2", painter: "b"),
-        Painting(image: "3", painter: "c"),
-        Painting(image: "4", painter: "d"),
-        Painting(image: "5", painter: "e"),
-        Painting(image: "6", painter: "f")
+        Painting(image: "1", name: "a"),
+        Painting(image: "2", name: "b"),
+        Painting(image: "3", name: "c"),
+        Painting(image: "4", name: "d"),
+        Painting(image: "5", name: "e"),
+        Painting(image: "6", name: "f"),
+        Painting(image: "1", name: "a"),
+        Painting(image: "2", name: "b"),
+        Painting(image: "3", name: "c"),
+        Painting(image: "4", name: "d"),
+        Painting(image: "5", name: "e"),
+        Painting(image: "6", name: "f")
     ]
     
     override func viewDidLoad() {

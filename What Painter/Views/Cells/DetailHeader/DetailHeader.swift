@@ -30,7 +30,7 @@ class DetailHeader: UICollectionReusableView {
         gradientLayer.frame = detailHeaderImage.bounds
         gradientLayer.colors = [UIColor.white.cgColor, UIColor.clear.cgColor, UIColor.clear.cgColor]
         
-        gradientLayer.locations = [0.5, 0.8, 1.0]
+        gradientLayer.locations = [0.5, 0.9, 1.0]
         
         return gradientLayer
     } 

@@ -10,10 +10,10 @@ import Foundation
 
 class Painting {
     let image: String
-    let painter: String
+    let name: String
     
-    init(image: String, painter: String) {
+    init(image: String, name: String) {
         self.image = image
-        self.painter = painter
+        self.name = name
     }
 }
