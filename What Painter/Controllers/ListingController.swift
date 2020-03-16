@@ -52,6 +52,9 @@ class ListingController: UICollectionViewController {
 
 extension ListingController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row == 0 {
+             return .init(width: view.frame.width , height: 180)
+        }
         return .init(width: view.frame.width , height: 250)
     }
 }
@@ -77,10 +80,11 @@ class PainterCategoryCell: CategoryCell {
     
     private class PainterCell: TypeCell {
         override func setupViews() {
+            imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.layer.cornerRadius = self.frame.width / 2
             imageView.layer.borderColor =  UIColor.systemPink.cgColor
             imageView.layer.borderWidth = 2
-            imageView.translatesAutoresizingMaskIntoConstraints = false
+
             
             addSubview(imageView)
             addSubview(nameLabel)
@@ -89,6 +93,9 @@ class PainterCategoryCell: CategoryCell {
             
             nameLabel.frame = CGRect(x: 0, y: frame.height - 30, width: frame.width, height: 40)
             imageView.frame = CGRect(x: 0, y: 0, width: 120, height: 120)
+            
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": imageView]))
+            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": imageView]))
         }
     }
 }

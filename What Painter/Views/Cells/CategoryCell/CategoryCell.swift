@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell {
     private let cellId = "typeCellId"
-    
+   
     var category: Category?  {
         didSet {
             if let name = category?.name {
@@ -28,14 +28,14 @@ class CategoryCell: UICollectionViewCell {
     
     var nameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 28)
+        label.font = .systemFont(ofSize: 22)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
     }()
     
     let typesCollectionView: UICollectionView = {
-        let layoyt = UICollectionViewFlowLayout()
+        let layoyt = StrechyHeaderLayout()
         layoyt.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layoyt)
