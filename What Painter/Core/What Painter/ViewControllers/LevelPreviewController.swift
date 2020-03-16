@@ -14,7 +14,6 @@ class LevelPreviewController: UIViewController {
     init(level: Level) {
         self.level = level
         super.init(nibName: nil, bundle: nil)
-        self.edgesForExtendedLayout = .all
         self.hidesBottomBarWhenPushed = true
     }
     
@@ -49,12 +48,12 @@ class LevelPreviewController: UIViewController {
         return btn
     }()
     
-    let stackView: UIStackView = {
+    lazy var stackView: UIStackView = {
         let sv = UIStackView()
-        sv.axis = NSLayoutConstraint.Axis.vertical
-        sv.distribution = UIStackView.Distribution.fillEqually
-        sv.alignment = UIStackView.Alignment.center
-        sv.spacing = 16.0
+        sv.backgroundColor = .yellow
+        sv.axis = .vertical
+        sv.distribution = .fillEqually
+        sv.spacing = 0
         sv.translatesAutoresizingMaskIntoConstraints = false
         
         return sv
@@ -63,8 +62,6 @@ class LevelPreviewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(hexString: "1F2124")
-        
-        
         
         setupView()
     }
@@ -75,16 +72,13 @@ class LevelPreviewController: UIViewController {
         
         let nameWrapper = UIView()
         nameWrapper.translatesAutoresizingMaskIntoConstraints = false
-        nameWrapper.backgroundColor = .red
         nameWrapper.addSubview(levelName)
         
         let imageWrapper = UIView()
-        imageWrapper.backgroundColor = .green
         imageWrapper.translatesAutoresizingMaskIntoConstraints = false
         imageWrapper.addSubview(levelImage)
         
         let btnWrapper = UIView()
-        btnWrapper.backgroundColor = .blue
         btnWrapper.translatesAutoresizingMaskIntoConstraints = false
         btnWrapper.addSubview(levelStartBtn)
         
@@ -94,32 +88,35 @@ class LevelPreviewController: UIViewController {
         
         self.view.addSubview(stackView)
         
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": stackView]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": stackView]))
-        
-        imageWrapper.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": levelImage]))
-        
-        levelName.bottomAnchor.constraint(equalTo: nameWrapper.bottomAnchor, constant: -20).isActive = true
-        
-        levelImage.centerXAnchor.constraint(equalTo: imageWrapper.centerXAnchor).isActive = true
-        levelImage.centerYAnchor.constraint(equalTo: imageWrapper.centerYAnchor).isActive = true
-        levelImage.addConstraint(NSLayoutConstraint(
-            item: levelImage,
-            attribute: .height,
-            relatedBy: .equal,
-            toItem: levelImage,
-            attribute: .width,
-            multiplier: 1,
-            constant: 0)
-        )
-        
-        levelName.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        levelName.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        
-        levelStartBtn.heightAnchor.constraint(equalToConstant: 50 ).isActive = true
-        levelStartBtn.centerYAnchor.constraint(equalTo: btnWrapper.centerYAnchor).isActive = true
-        levelStartBtn.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        levelStartBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            
+            levelName.centerXAnchor.constraint(equalTo: nameWrapper.centerXAnchor),
+            levelName.bottomAnchor.constraint(equalTo: nameWrapper.bottomAnchor, constant: -20),
+            
+            levelImage.centerXAnchor.constraint(equalTo: imageWrapper.centerXAnchor),
+            levelImage.centerYAnchor.constraint(equalTo: imageWrapper.centerYAnchor),
+            levelImage.heightAnchor.constraint(equalTo: imageWrapper.heightAnchor),
+            levelImage.widthAnchor.constraint(equalTo: levelImage.heightAnchor),
+            
+            levelStartBtn.widthAnchor.constraint(equalToConstant: 250),
+            levelStartBtn.heightAnchor.constraint(equalToConstant: 50),
+            levelStartBtn.centerXAnchor.constraint(equalTo: btnWrapper.centerXAnchor),
+            levelStartBtn.centerYAnchor.constraint(equalTo: btnWrapper.centerYAnchor)
+        ])
+    }
+    
+    override func viewDidLayoutSubviews() {
+        levelImage.layer.cornerRadius = levelImage.frame.width / 2
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        DispatchQueue.main.async {
+            self.levelImage.layer.cornerRadius = self.levelImage.frame.width / 2
+        }
     }
     
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
