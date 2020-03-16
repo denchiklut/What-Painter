@@ -14,9 +14,8 @@ class LevelPreviewController: UIViewController {
     init(level: Level) {
         self.level = level
         super.init(nibName: nil, bundle: nil)
-        self.definesPresentationContext = true
-        self.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-        self.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.edgesForExtendedLayout = .all
+        self.hidesBottomBarWhenPushed = true
     }
     
     let levelImage: UIImageView = {
