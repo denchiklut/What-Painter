@@ -21,16 +21,26 @@ class RootViewController: UITabBarController {
             hidesNavigationBar: false,
             headerNibName: nil
         )
+        
+        let listingLayout = UICollectionViewFlowLayout()
+        
         let hc = HomeController(configuration: collectionVCConfiguration)
-
+        let listingController = ListingController(collectionViewLayout: listingLayout)
+        
         let homeNavController = UINavigationController(rootViewController: hc)
         homeNavController.tabBarItem.image = UIImage(systemName: "play")
         homeNavController.tabBarItem.selectedImage = UIImage(systemName: "play.fill")
         homeNavController.tabBarItem.title = "Play"
         
+
+        let listingNavController = UINavigationController(rootViewController: listingController)
+        listingController.tabBarItem.image = UIImage(systemName: "rectangle.on.rectangle.angled")
+        listingController.tabBarItem.selectedImage = UIImage(systemName: "rectangle.fill.on.rectangle.angled.fill")
+        listingController.tabBarItem.title = "Learn"
+        
         tabBar.tintColor = .systemPink
         
-        viewControllers = [homeNavController]
+        viewControllers = [homeNavController, listingNavController]
     }
     
     private func createLayout() -> UICollectionViewLayout {

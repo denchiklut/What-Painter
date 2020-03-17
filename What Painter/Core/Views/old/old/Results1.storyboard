@@ -152,33 +152,11 @@
                         <outlet property="star1" destination="CmR-YA-IVb" id="nem-h8-Yiw"/>
                         <outlet property="star2" destination="tkt-WP-n2S" id="PYX-K9-fmC"/>
                         <outlet property="star3" destination="H3Z-9g-Yi7" id="94d-I1-ktP"/>
-                        <segue destination="d8S-jh-am5" kind="show" identifier="playAgain" id="L59-GW-uPS"/>
-                        <segue destination="wLx-Jq-233" kind="show" identifier="nextLevel" id="3lZ-hK-qti"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfJ-AE-NP1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1883" y="27"/>
-        </scene>
-        <!--Quiz-->
-        <scene sceneID="5We-Bs-aef">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Quiz" id="d8S-jh-am5" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="bXF-Od-LDn"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pYD-MS-WDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2534" y="-69"/>
-        </scene>
-        <!--LevelPreview-->
-        <scene sceneID="iIq-b8-xCX">
-            <objects>
-                <viewControllerPlaceholder storyboardName="LevelPreview" id="wLx-Jq-233" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="dXk-AM-Fx2"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Cs-Yi-KbB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2571" y="110"/>
         </scene>
     </scenes>
     <resources>

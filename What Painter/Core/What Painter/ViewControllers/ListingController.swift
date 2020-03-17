@@ -9,6 +9,13 @@
 import UIKit
 
 class ListingController: UICollectionViewController {
+    override init(collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(collectionViewLayout: layout)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
