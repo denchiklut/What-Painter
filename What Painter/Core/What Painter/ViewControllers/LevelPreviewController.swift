@@ -9,10 +9,13 @@
 import UIKit
 
 class LevelPreviewController: UIViewController {
+    var levelsManager: LevelsManager
     var level: Level
     
-    init(level: Level) {
-        self.level = level
+    init(levelsManager: LevelsManager) {
+        self.levelsManager = levelsManager
+        self.level = levelsManager.getCurrentLevel()
+        
         super.init(nibName: nil, bundle: nil)
         self.hidesBottomBarWhenPushed = true
     }
@@ -44,13 +47,13 @@ class LevelPreviewController: UIViewController {
         btn.layer.cornerRadius = 25
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("Start", for: .normal)
+        btn.addTarget(self, action: #selector(startQuezPressed), for: .touchUpInside)
         
         return btn
     }()
     
     lazy var stackView: UIStackView = {
         let sv = UIStackView()
-        sv.backgroundColor = .yellow
         sv.axis = .vertical
         sv.distribution = .fillEqually
         sv.spacing = 0
@@ -70,21 +73,31 @@ class LevelPreviewController: UIViewController {
         levelImage.image = UIImage(named: level.image)
         levelName.text = level.title
         
-        let nameWrapper = UIView()
-        nameWrapper.translatesAutoresizingMaskIntoConstraints = false
-        nameWrapper.addSubview(levelName)
-        
-        let imageWrapper = UIView()
-        imageWrapper.translatesAutoresizingMaskIntoConstraints = false
-        imageWrapper.addSubview(levelImage)
-        
-        let btnWrapper = UIView()
-        btnWrapper.translatesAutoresizingMaskIntoConstraints = false
-        btnWrapper.addSubview(levelStartBtn)
-        
-        stackView.addArrangedSubview(nameWrapper)
-        stackView.addArrangedSubview(imageWrapper)
-        stackView.addArrangedSubview(btnWrapper)
+        for view in [levelName, levelImage, levelStartBtn] {
+            let wrapperView = UIView()
+            wrapperView.addSubview(view)
+            wrapperView.translatesAutoresizingMaskIntoConstraints = false
+            
+            view.centerXAnchor.constraint(equalTo: wrapperView.centerXAnchor).isActive = true
+            
+            switch view {
+            case levelName:
+                levelName.bottomAnchor.constraint(equalTo: wrapperView.bottomAnchor, constant: -20).isActive = true
+            case levelImage:
+                NSLayoutConstraint.activate([
+                    levelImage.heightAnchor.constraint(equalTo: wrapperView.heightAnchor),
+                    levelImage.centerYAnchor.constraint(equalTo: wrapperView.centerYAnchor),
+                    levelImage.widthAnchor.constraint(equalTo: levelImage.heightAnchor)
+                ])
+            default:
+                NSLayoutConstraint.activate([
+                    view.centerYAnchor.constraint(equalTo: wrapperView.centerYAnchor),
+                    levelStartBtn.widthAnchor.constraint(equalToConstant: 250),
+                    levelStartBtn.heightAnchor.constraint(equalToConstant: 50)
+                ])
+            }
+            stackView.addArrangedSubview(wrapperView)
+        }
         
         self.view.addSubview(stackView)
         
@@ -92,21 +105,14 @@ class LevelPreviewController: UIViewController {
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            
-            levelName.centerXAnchor.constraint(equalTo: nameWrapper.centerXAnchor),
-            levelName.bottomAnchor.constraint(equalTo: nameWrapper.bottomAnchor, constant: -20),
-            
-            levelImage.centerXAnchor.constraint(equalTo: imageWrapper.centerXAnchor),
-            levelImage.centerYAnchor.constraint(equalTo: imageWrapper.centerYAnchor),
-            levelImage.heightAnchor.constraint(equalTo: imageWrapper.heightAnchor),
-            levelImage.widthAnchor.constraint(equalTo: levelImage.heightAnchor),
-            
-            levelStartBtn.widthAnchor.constraint(equalToConstant: 250),
-            levelStartBtn.heightAnchor.constraint(equalToConstant: 50),
-            levelStartBtn.centerXAnchor.constraint(equalTo: btnWrapper.centerXAnchor),
-            levelStartBtn.centerYAnchor.constraint(equalTo: btnWrapper.centerYAnchor)
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
+    }
+    
+    @objc func startQuezPressed(_ sender: UIButton) {
+        let vc = QuizController(levelsManager: levelsManager)
+           
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLayoutSubviews() {

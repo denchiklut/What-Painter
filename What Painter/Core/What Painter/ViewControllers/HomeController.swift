@@ -26,10 +26,8 @@ class HomeController: GenericCollectionViewController<LevelCell, Level> {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedLevel = levels[indexPath.row]
-        let vc = LevelPreviewController(level: selectedLevel)
-        vc.definesPresentationContext = true
-        vc.modalPresentationStyle = .overFullScreen
+        levelsManager.currentLevel = indexPath.row
+        let vc = LevelPreviewController(levelsManager: levelsManager)
     
         self.navigationController?.pushViewController(vc, animated: true)
     }
