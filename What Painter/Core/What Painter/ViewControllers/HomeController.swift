@@ -12,6 +12,11 @@ class HomeController: GenericCollectionViewController<LevelCell, Level> {
     var levelsManager = LevelsManager()
     var levels = [Level]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+        collectionView.reloadData()
+    }
+    
     override init(configuration: GenericCollectionViewControllerConfiguration) {
         super.init(configuration: configuration)
         levels = levelsManager.levels
@@ -32,6 +37,8 @@ class HomeController: GenericCollectionViewController<LevelCell, Level> {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 

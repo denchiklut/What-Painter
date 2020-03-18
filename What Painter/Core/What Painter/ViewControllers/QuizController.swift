@@ -10,15 +10,13 @@ import UIKit
 
 class QuizController: UIViewController {
 
-    var levelsManager: LevelsManager?
+    var levelsManager: LevelsManager
     
     init(levelsManager: LevelsManager) {
         self.levelsManager = levelsManager
         
         super.init(nibName: nil, bundle: nil)
     }
-    
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     let quizImage: UIImageView = {
         let iv = UIImageView()
@@ -174,7 +172,7 @@ class QuizController: UIViewController {
         vissualEffectView.effect = nil
         vissualEffectView.isHidden = true
         modalView.layer.cornerRadius = 5
-        levelsManager?.getCurrentLevel().quiz.delegate = self
+        levelsManager.getCurrentLevel().quiz.delegate = self
 
         setupView()
         updateUI()
@@ -182,7 +180,7 @@ class QuizController: UIViewController {
 
     @objc func answerButtonPressed(_ sender: UIButton) {
         if let answer = sender.currentTitle {
-            if levelsManager!.getCurrentLevel().quiz.checkAnswer(a: answer) {
+            if levelsManager.getCurrentLevel().quiz.checkAnswer(a: answer) {
                 sender.backgroundColor = UIColor.green
                 showModal()
             } else {
@@ -192,7 +190,7 @@ class QuizController: UIViewController {
     }
 
     @objc func nextBtnPressed(_ sender: UIButton) {
-        levelsManager?.getCurrentLevel().quiz.nextQuestion()
+        levelsManager.getCurrentLevel().quiz.nextQuestion()
         updateUI()
         hideModal()
     }
@@ -246,15 +244,16 @@ class QuizController: UIViewController {
     }
 
     @objc func updateUI() {
-        if let answers = levelsManager?.getCurrentLevel().quiz.getAnswers(), let image = levelsManager?.getCurrentLevel().quiz.getImage() {
-            quizImage.image = UIImage(named: image)
-            bgImage.image = UIImage(named: image)
+        let answers = levelsManager.getCurrentLevel().quiz.getAnswers()
+        let image = levelsManager.getCurrentLevel().quiz.getImage()
+        
+        quizImage.image = UIImage(named: image)
+        bgImage.image = UIImage(named: image)
 
-            choice1.setTitle(answers[0], for: .normal)
-            choice2.setTitle(answers[1], for: .normal)
-            choice3.setTitle(answers[2], for: .normal)
-            choice4.setTitle(answers[3], for: .normal)
-        }
+        choice1.setTitle(answers[0], for: .normal)
+        choice2.setTitle(answers[1], for: .normal)
+        choice3.setTitle(answers[2], for: .normal)
+        choice4.setTitle(answers[3], for: .normal)
 
         choice1.backgroundColor = UIColor.darkGray
         choice2.backgroundColor = UIColor.darkGray
@@ -273,9 +272,8 @@ class QuizController: UIViewController {
         modalView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         modalView.alpha = 0
 
-        if let imgName = levelsManager?.getCurrentLevel().quiz.getImageName() {
-            imageName.text = imgName
-        }
+        let imgName = levelsManager.getCurrentLevel().quiz.getImageName()
+        imageName.text = imgName
 
         UIView.animate(withDuration: 0.4) {
             self.vissualEffectView.effect = self.effect
@@ -300,13 +298,19 @@ class QuizController: UIViewController {
             self.modalView.center = self.view.center
         }
     }
+    
+     required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 extension QuizController: QuizBrainDelegate {
     func quizDidFinished(_ sender: QuizBrain, with score: Int) {
-        levelsManager?.getCurrentLevel().updateStars(score: score)
+        levelsManager.getCurrentLevel().updateStars(score: score)
 
-        print("Finished level")
+        let vc = ResultsController(levelsManager: levelsManager)
+                  
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -52,7 +52,7 @@ class LevelPreviewController: UIViewController {
         return btn
     }()
     
-    lazy var stackView: UIStackView = {
+    let stackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.distribution = .fillEqually
@@ -125,5 +125,7 @@ class LevelPreviewController: UIViewController {
         }
     }
     
-    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
