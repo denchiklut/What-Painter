@@ -28,6 +28,8 @@ class RootViewController: UITabBarController {
         let listingController = ListingController(collectionViewLayout: listingLayout)
         
         let homeNavController = UINavigationController(rootViewController: hc)
+        homeNavController.navigationBar.tintColor = .systemPink
+        homeNavController.navigationBar.barTintColor = UIColor(hexString: "161616")
         homeNavController.tabBarItem.image = UIImage(systemName: "play")
         homeNavController.tabBarItem.selectedImage = UIImage(systemName: "play.fill")
         homeNavController.tabBarItem.title = "Play"

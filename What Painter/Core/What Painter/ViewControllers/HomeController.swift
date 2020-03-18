@@ -13,7 +13,9 @@ class HomeController: GenericCollectionViewController<LevelCell, Level> {
     var levels = [Level]()
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         navigationController?.isNavigationBarHidden = false
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: nil, action: nil)
         collectionView.reloadData()
     }
     
@@ -25,8 +27,8 @@ class HomeController: GenericCollectionViewController<LevelCell, Level> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "What Painter"
         
+        title = "What Painter"
         collectionView.delegate = self
     }
     
