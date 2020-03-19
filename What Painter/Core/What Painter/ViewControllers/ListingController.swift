@@ -46,6 +46,7 @@ class ListingController: UICollectionViewController {
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: painterCell, for: indexPath) as! PainterCategoryCell
             cell.category = categories[indexPath.row]
+            cell.delegate = self
             
             return cell
         }
@@ -66,43 +67,11 @@ extension ListingController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-class PainterCategoryCell: CategoryCell {
-    private let painterCell = "painterCell"
-    
-    override func setupViews() {
-        super.setupViews()
-        typesCollectionView.register(PainterCell.self, forCellWithReuseIdentifier: painterCell)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: painterCell, for: indexPath) as! PainterCell
-        cell.item = category?.items?[indexPath.row]
+extension ListingController: PainterCellProtocol {
+    func didSelect(_ sender: PainterCategoryCell) {
+        let layput = UICollectionViewFlowLayout()
         
-        return cell
-    }
-     
-    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 120, height: 120)
-    }
-    
-    private class PainterCell: TypeCell {
-        override func setupViews() {
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.layer.cornerRadius = self.frame.width / 2
-            imageView.layer.borderColor =  UIColor.systemPink.cgColor
-            imageView.layer.borderWidth = 2
-
-            
-            addSubview(imageView)
-            addSubview(nameLabel)
-            
-            nameLabel.font = UIFont(name: "Marker Felt", size: 26)
-            
-            nameLabel.frame = CGRect(x: 0, y: frame.height - 30, width: frame.width, height: 40)
-            imageView.frame = CGRect(x: 0, y: 0, width: 120, height: 120)
-            
-            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": imageView]))
-            addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["v0": imageView]))
-        }
+        let vc = DescribeController(collectionViewLayout: layput)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

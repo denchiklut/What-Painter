@@ -14,8 +14,6 @@ private let interItemSpacing: CGFloat = 15
 private let padding: CGFloat = 20
 
 class DescribeController: UICollectionViewController {
-//    @IBOutlet weak var descriptionImage: UIImageView!
-    
     var paintings = [
         Painting(image: "1", name: "a"),
         Painting(image: "2", name: "b"),
