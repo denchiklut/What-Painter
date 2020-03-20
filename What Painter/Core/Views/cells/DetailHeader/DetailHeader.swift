@@ -37,10 +37,28 @@ class DetailHeader: UICollectionReusableView {
         return btn
     }()
     
+    let gradientLayer: CAGradientLayer = {
+        let layer = CAGradientLayer()
+        layer.colors = [UIColor.white.cgColor, UIColor.clear.cgColor, UIColor.clear.cgColor]
+        layer.locations = [0.4, 0.9, 1.0]
+        
+        return layer
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupView()
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let objectView = object as? UIImageView, objectView === bgImahe, keyPath == #keyPath(UIImageView.bounds) {
+
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            gradientLayer.frame = objectView.bounds
+            CATransaction.commit()
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -51,6 +69,8 @@ class DetailHeader: UICollectionReusableView {
         addSubview(bgImahe)
         addSubview(titlelabel)
         addSubview(typebtn)
+        bgImahe.layer.mask = gradientLayer
+        bgImahe.addObserver(self, forKeyPath: #keyPath(UIImageView.bounds), options: .new, context: nil)
         
         bgImahe.image = UIImage(named: "16")
         titlelabel.text = "Ван Гог"
@@ -71,15 +91,5 @@ class DetailHeader: UICollectionReusableView {
             titlelabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
-    
-    func makeGradient() -> CAGradientLayer {
-        let gradientLayer = CAGradientLayer( )
-        gradientLayer.frame = self.bounds
-        gradientLayer.colors = [UIColor.white.cgColor, UIColor.clear.cgColor, UIColor.clear.cgColor]
-        
-        gradientLayer.locations = [0.5, 0.9, 1.0]
-        
-        return gradientLayer
-    } 
 }
 

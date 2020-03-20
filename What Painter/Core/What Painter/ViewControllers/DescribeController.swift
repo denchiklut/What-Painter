@@ -31,6 +31,8 @@ class DescribeController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(hexString: "2C2C2E")
+        collectionView.backgroundColor = .clear
         
         collectionView.dataSource = self
         collectionView.contentInsetAdjustmentBehavior = .never
