@@ -8,22 +8,58 @@
 import UIKit
 
 class PaintingCell: UICollectionViewCell {
-      @IBOutlet weak var paintingImageView: UIImageView!
-      @IBOutlet weak var paintingTitleLabel: UILabel!
-      
-      var painting: Painting! {
-          didSet {
-            if let safePainter = painting {
-                paintingImageView.image = UIImage(named: safePainter.image)
-                paintingTitleLabel.text = safePainter.name
-            }
-          }
-      }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        paintingImageView.layer.cornerRadius = 5
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let bgImage: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFill
+        iv.layer.cornerRadius = 5
+        iv.clipsToBounds = true
+        
+        return iv
+    }()
+    
+    let imageName: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textAlignment = .center
+        
+        return label
+    }()
+    
+    func setupView() {
+        addSubview(bgImage)
+        addSubview(imageName)
+        
+        NSLayoutConstraint.activate([
+            bgImage.topAnchor.constraint(equalTo: self.topAnchor),
+            bgImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            bgImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            bgImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            imageName.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            imageName.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            imageName.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            imageName.heightAnchor.constraint(equalToConstant: 60)
+        ])
+    }
+    
+    var painting: Painting! {
+        didSet {
+            if let safePainter = painting {
+                bgImage.image = UIImage(named: safePainter.image)
+                imageName.text = safePainter.name
+            }
+        }
+    }
+    
 }

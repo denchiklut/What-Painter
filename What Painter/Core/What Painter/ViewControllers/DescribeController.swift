@@ -8,10 +8,10 @@
 
 import UIKit
 
-private let numberOfItemsPerRow: CGFloat = 2
-private let lineSpacing: CGFloat = 15
-private let interItemSpacing: CGFloat = 15
-private let padding: CGFloat = 20
+private let numberOfItemsPerRow: CGFloat = 3
+private let lineSpacing: CGFloat = 6
+private let interItemSpacing: CGFloat = 6
+private let padding: CGFloat = 6
 
 class DescribeController: UICollectionViewController {
     var paintings = [
@@ -34,8 +34,8 @@ class DescribeController: UICollectionViewController {
         
         collectionView.dataSource = self
         collectionView.contentInsetAdjustmentBehavior = .never
-        collectionView.register(UINib(nibName: K.paintingCell, bundle: nil), forCellWithReuseIdentifier: K.reusablePaintingCell)
-        collectionView.register(UINib(nibName: K.detailHeader, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: K.detailHeaderIdentofire)
+        collectionView.register(PaintingCell.self, forCellWithReuseIdentifier: K.reusablePaintingCell)
+        collectionView.register(DetailHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: K.detailHeaderIdentofire)
         
         setupCollectionView()
     }

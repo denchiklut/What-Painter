@@ -10,24 +10,71 @@ import UIKit
 
 class DetailHeader: UICollectionReusableView {
     
-    @IBOutlet weak var detailHeaderImage: UIImageView!
-    @IBOutlet weak var detailTitile: UILabel!
-    @IBOutlet weak var centerBtn: UIButton!
+    let bgImahe: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFill
+        
+        return iv
+    }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    let titlelabel: UILabel = {
+        let t = UILabel()
+        t.translatesAutoresizingMaskIntoConstraints = false
+        t.font = UIFont.boldSystemFont(ofSize: 50)
+        t.textAlignment = .center
         
-        centerBtn.layer.cornerRadius = 18
+        return t
+    }()
+    
+    let typebtn: UIButton = {
+        let btn = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.backgroundColor = .systemPink
+        btn.tintColor = .white
+        btn.layer.cornerRadius = 15
         
-        let gradient = makeGradient()
-        detailHeaderImage.layer.mask = gradient
+        return btn
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupView()
     }
     
-    var animator: UIViewPropertyAnimator!
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupView() {
+        addSubview(bgImahe)
+        addSubview(titlelabel)
+        addSubview(typebtn)
+        
+        bgImahe.image = UIImage(named: "16")
+        titlelabel.text = "Ван Гог"
+        typebtn.setTitle("Империониз", for: .normal)
+        
+        NSLayoutConstraint.activate([
+            bgImahe.topAnchor.constraint(equalTo: self.topAnchor),
+            bgImahe.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            bgImahe.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            bgImahe.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            typebtn.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            typebtn.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            typebtn.widthAnchor.constraint(equalToConstant: 160),
+            
+            titlelabel.bottomAnchor.constraint(equalTo: typebtn.topAnchor, constant: -20),
+            titlelabel.leadingAnchor.constraint(equalTo:  self.leadingAnchor),
+            titlelabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
+    }
     
     func makeGradient() -> CAGradientLayer {
         let gradientLayer = CAGradientLayer( )
-        gradientLayer.frame = detailHeaderImage.bounds
+        gradientLayer.frame = self.bounds
         gradientLayer.colors = [UIColor.white.cgColor, UIColor.clear.cgColor, UIColor.clear.cgColor]
         
         gradientLayer.locations = [0.5, 0.9, 1.0]
