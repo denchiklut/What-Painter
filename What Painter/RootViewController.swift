@@ -11,7 +11,7 @@ import UIKit
 class RootViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let layout = createLayout()
         
         let collectionVCConfiguration = GenericCollectionViewControllerConfiguration(
@@ -22,10 +22,7 @@ class RootViewController: UITabBarController {
             headerNibName: nil
         )
         
-        let listingLayout = UICollectionViewFlowLayout()
-        
         let hc = HomeController(configuration: collectionVCConfiguration)
-        let listingController = ListingController(collectionViewLayout: listingLayout)
         
         let homeNavController = UINavigationController(rootViewController: hc)
         homeNavController.navigationBar.tintColor = .systemPink
@@ -34,15 +31,16 @@ class RootViewController: UITabBarController {
         homeNavController.tabBarItem.selectedImage = UIImage(systemName: "play.fill")
         homeNavController.tabBarItem.title = "Play"
         
-
-        let listingNavController = UINavigationController(rootViewController: listingController)
-        listingController.tabBarItem.image = UIImage(systemName: "rectangle.on.rectangle.angled")
-        listingController.tabBarItem.selectedImage = UIImage(systemName: "rectangle.fill.on.rectangle.angled.fill")
-        listingController.tabBarItem.title = "Learn"
+        
+        let listingNavController = UINavigationController(rootViewController: GenericListingViewController())
+        listingNavController.tabBarItem.image = UIImage(systemName: "rectangle.on.rectangle.angled")
+        listingNavController.tabBarItem.selectedImage = UIImage(systemName: "rectangle.fill.on.rectangle.angled.fill")
+        listingNavController.tabBarItem.title = "Learn"
+        
         
         tabBar.tintColor = .systemPink
         
-        viewControllers = [homeNavController, listingNavController]
+        viewControllers = [listingNavController, homeNavController]
     }
     
     private func createLayout() -> UICollectionViewLayout {
