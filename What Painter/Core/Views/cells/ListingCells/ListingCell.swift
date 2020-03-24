@@ -9,8 +9,8 @@
 import UIKit
 
 class ListingCell: UICollectionViewCell {
-
-    static let reuseIdentifier = "video-cell-reuse-identifier"
+    static let reuseIdentifier = "listing-cell-reuse-identifier"
+    
     let imageView = UIImageView()
     let titleLabel = UILabel()
     let categoryLabel = UILabel()
@@ -41,10 +41,7 @@ extension ListingCell {
 
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.borderColor = UIColor.black.cgColor
-        imageView.layer.borderWidth = 1
         imageView.layer.cornerRadius = 4
-        imageView.backgroundColor = UIColor.cornflowerBlue
 
         let spacing = CGFloat(10)
         NSLayoutConstraint.activate([

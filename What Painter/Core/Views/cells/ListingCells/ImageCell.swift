@@ -27,7 +27,9 @@ extension ImageCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 75
+        imageView.layer.cornerRadius = 55
+        imageView.layer.borderColor = UIColor.systemPink.cgColor
+        imageView.layer.borderWidth = 1
         contentView.addSubview(imageView)
         
         let inset = CGFloat(0)

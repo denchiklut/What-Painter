@@ -10,6 +10,10 @@ import UIKit
 
 class GenericListingViewController: UIViewController {
     
+    enum Section: Int, CaseIterable {
+        case painter, museam, mode, country
+    }
+    
     let videosController = ListingViewController()
     var collectionView: UICollectionView! = nil
     var dataSource: UICollectionViewDiffableDataSource<ListingCollection, ListingItem>! = nil
@@ -18,9 +22,16 @@ class GenericListingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "What Painter"
         configureHierarchy()
         configureDataSource()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
     }
 }
 
@@ -28,17 +39,35 @@ extension GenericListingViewController {
     func createLayout() -> UICollectionViewLayout {
         let sectionProvider = {
             (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            guard let sectionKind = Section(rawValue: sectionIndex) else { fatalError("unknown section kind") }
             
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             
-            let groupHeight = sectionIndex == 0 ? NSCollectionLayoutDimension.absolute(150) : NSCollectionLayoutDimension.absolute(250)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(150), heightDimension: groupHeight)
+            let groupHeight: NSCollectionLayoutDimension
+            let groupWidth: NSCollectionLayoutDimension
+            
+            switch sectionKind {
+            case .painter:
+                groupHeight = NSCollectionLayoutDimension.absolute(110)
+                groupWidth = NSCollectionLayoutDimension.absolute(110)
+            case .museam:
+                groupHeight = NSCollectionLayoutDimension.absolute(150)
+                groupWidth = NSCollectionLayoutDimension.absolute(250)
+            case .mode:
+                groupHeight = NSCollectionLayoutDimension.absolute(44)
+                groupWidth = NSCollectionLayoutDimension.absolute(160)
+            default:
+                groupHeight = NSCollectionLayoutDimension.absolute(220)
+                groupWidth = NSCollectionLayoutDimension.absolute(150)
+            }
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: groupWidth, heightDimension: groupHeight)
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
             
             let section = NSCollectionLayoutSection(group: group)
             section.orthogonalScrollingBehavior = .continuous
-            section.interGroupSpacing = 20
+            section.interGroupSpacing = sectionKind == .painter ? 10 : 20
             section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
             
             let titleSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
@@ -64,6 +93,7 @@ extension GenericListingViewController {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .systemBackground
+        collectionView.delegate = self
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -73,6 +103,7 @@ extension GenericListingViewController {
         ])
         collectionView.register(ListingCell.self, forCellWithReuseIdentifier: ListingCell.reuseIdentifier)
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: ImageCell.reuseIdentifier)
+        collectionView.register(MuseamCell.self, forCellWithReuseIdentifier: MuseamCell.reuseIdentifier)
         collectionView.register(TitleSupplementaryView.self,
                                 forSupplementaryViewOfKind: GenericListingViewController.titleElementKind,
                                 withReuseIdentifier: TitleSupplementaryView.reuseIdentifier)
@@ -80,23 +111,33 @@ extension GenericListingViewController {
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<ListingCollection, ListingItem> (collectionView: collectionView) {
             (collectionView: UICollectionView, indexPath: IndexPath, item: ListingItem) -> UICollectionViewCell? in
+            guard let sectionKind = Section(rawValue: indexPath.section) else { fatalError("unknown section kind") }
             
-            if indexPath.section == 0 {
+            switch sectionKind {
+            case .painter:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.reuseIdentifier, for: indexPath) as? ImageCell else {
                     fatalError("Cannot create new cell")
                 }
                 cell.imageView.image = UIImage(named:  item.image)
                 return cell
+            case .mode:
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MuseamCell.reuseIdentifier, for: indexPath) as? MuseamCell else {
+                    fatalError("Cannot create new cell")
+                }
+                //                cell.imageView.image = UIImage(named: item.image)
+                cell.titleLabel.text = item.title
+                
+                return cell
+            default:
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListingCell.reuseIdentifier, for: indexPath) as? ListingCell else {
+                    fatalError("Cannot create new cell")
+                }
+                cell.imageView.image = UIImage(named: item.image)
+                cell.titleLabel.text = item.title
+                cell.categoryLabel.text = item.category
+                
+                return cell
             }
-            
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListingCell.reuseIdentifier, for: indexPath) as? ListingCell else {
-                fatalError("Cannot create new cell")
-            }
-            cell.imageView.image = UIImage(named: item.image)
-            cell.titleLabel.text = item.title
-            cell.categoryLabel.text = item.category
-            
-            return cell
         }
         
         dataSource.supplementaryViewProvider = { [weak self] (collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? in
@@ -120,5 +161,12 @@ extension GenericListingViewController {
             currentSnapshot.appendItems(collection.videos)
         }
         dataSource.apply(currentSnapshot, animatingDifferences: false)
+    }
+}
+
+extension GenericListingViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let dc = DescribeController(collectionViewLayout: UICollectionViewLayout())
+        navigationController?.pushViewController(dc, animated: true)
     }
 }

@@ -19,6 +19,7 @@
 		2934C31A240B10B20009ED78 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C319240B10B20009ED78 /* Question.swift */; };
 		29540D552423F00C0085AAE0 /* PainterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29540D542423F00C0085AAE0 /* PainterCell.swift */; };
 		29540D582423F07A0085AAE0 /* PainterCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29540D572423F07A0085AAE0 /* PainterCategoryCell.swift */; };
+		29556CD6242A044A005C744F /* MuseamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29556CD5242A044A005C744F /* MuseamCell.swift */; };
 		295E40512420B1EA00593FEB /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295E40502420B1EA00593FEB /* QuizController.swift */; };
 		295ED916241CC1F400EA382F /* AppUIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295ED915241CC1F400EA382F /* AppUIConfiguration.swift */; };
 		295ED918241CC2B900EA382F /* AppGenericConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295ED917241CC2B900EA382F /* AppGenericConfigurationProtocol.swift */; };
@@ -58,6 +59,7 @@
 		2934C319240B10B20009ED78 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		29540D542423F00C0085AAE0 /* PainterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainterCell.swift; sourceTree = "<group>"; };
 		29540D572423F07A0085AAE0 /* PainterCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainterCategoryCell.swift; sourceTree = "<group>"; };
+		29556CD5242A044A005C744F /* MuseamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseamCell.swift; sourceTree = "<group>"; };
 		295E40502420B1EA00593FEB /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		295ED915241CC1F400EA382F /* AppUIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUIConfiguration.swift; sourceTree = "<group>"; };
 		295ED917241CC2B900EA382F /* AppGenericConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGenericConfigurationProtocol.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				290B554E24269F4D00108B23 /* TitleSupplementaryView.swift */,
 				2996A8C124278BE8005EB565 /* ImageCell.swift */,
 				290B554B24269E0700108B23 /* ListingCell.swift */,
+				29556CD5242A044A005C744F /* MuseamCell.swift */,
 			);
 			path = ListingCells;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				295ED92B241D19A400EA382F /* GenericCollectionViewController.swift in Sources */,
 				295ED91C241CC35600EA382F /* UIImage.swift in Sources */,
 				290B554C24269E0700108B23 /* ListingCell.swift in Sources */,
+				29556CD6242A044A005C744F /* MuseamCell.swift in Sources */,
 				295ED918241CC2B900EA382F /* AppGenericConfigurationProtocol.swift in Sources */,
 				29EE32A02409B8DA008547E5 /* SceneDelegate.swift in Sources */,
 				29540D582423F07A0085AAE0 /* PainterCategoryCell.swift in Sources */,

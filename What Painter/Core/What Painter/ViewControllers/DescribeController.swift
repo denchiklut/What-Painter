@@ -9,9 +9,9 @@
 import UIKit
 
 private let numberOfItemsPerRow: CGFloat = 3
-private let lineSpacing: CGFloat = 6
-private let interItemSpacing: CGFloat = 6
-private let padding: CGFloat = 6
+private let lineSpacing: CGFloat = 2
+private let interItemSpacing: CGFloat = 2
+private let padding: CGFloat = 0
 
 class DescribeController: UICollectionViewController {
     var paintings = [
