@@ -8,13 +8,34 @@
 
 import Foundation
 
-struct ListingItem: Hashable {
+class ListingItem: Hashable {
+    static func == (lhs: ListingItem, rhs: ListingItem) -> Bool {
+        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    }
+    
     let title: String
     let image: String
     let category: String
     let identifier = UUID()
+    
     func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
+    }
+    
+    init(title: String, image: String, category: String) {
+        self.title = title
+        self.image = image
+        self.category = category
+    }
+}
+
+class ModeItem: ListingItem {
+    let color: String
+    
+    init(title: String, image: String, category: String, color: String) {
+        self.color = color
+        
+        super.init(title: title, image: image, category: category)
     }
 }
 
@@ -66,14 +87,14 @@ extension ListingViewController {
                                        ListingItem(title: "Национальная галерея искусств", image: "32", category: "Вашингтон")]),
             
             ListingCollection(title: "Течение и искусстве",
-                              videos: [ListingItem(title: "Импрессионизм", image: "7", category: "XIX — XX"),
-                                       ListingItem(title: "Экспрессионизм", image: "8", category: "XX"),
-                                       ListingItem(title: "Кубизм", image: "9", category: "XX"),
-                                       ListingItem(title: "Сюрреализм", image: "10", category: "XX"),
-                                       ListingItem(title: "Романтизм", image: "11", category: "XVIII — XIX"),
-                                       ListingItem(title: "Фовизм", image: "12", category: "XIX — XX"),
-                                       ListingItem(title: "Реализм", image: "13", category: "XIX — XX"),
-                                       ListingItem(title: "Барокко", image: "14", category: "XVII—XVIII")]),
+                              videos: [ModeItem(title: "Импрессионизм", image: "33", category: "XIX — XX", color: "C13042"),
+                                       ModeItem(title: "Экспрессионизм", image: "41", category: "XX", color: "00C04D"),
+                                       ModeItem(title: "Кубизм", image: "35", category: "XX", color: "36AFA4"),
+                                       ModeItem(title: "Сюрреализм", image: "36", category: "XX", color: "C5A20E"),
+                                       ModeItem(title: "Романтизм", image: "37", category: "XVIII — XIX", color: "5F2FC4"),
+                                       ModeItem(title: "Фовизм", image: "38", category: "XIX — XX", color: "C42F6E"),
+                                       ModeItem(title: "Реализм", image: "39", category: "XIX — XX", color: "2F35C4"),
+                                       ModeItem(title: "Барокко", image: "40", category: "XVII—XVIII", color: "C4772F")]),
             
             ListingCollection(title: "Странны",
                               videos: [ListingItem(title: "Италия", image: "14", category: " "),

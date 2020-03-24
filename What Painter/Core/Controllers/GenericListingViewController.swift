@@ -55,8 +55,8 @@ extension GenericListingViewController {
                 groupHeight = NSCollectionLayoutDimension.absolute(150)
                 groupWidth = NSCollectionLayoutDimension.absolute(250)
             case .mode:
-                groupHeight = NSCollectionLayoutDimension.absolute(44)
-                groupWidth = NSCollectionLayoutDimension.absolute(160)
+                groupHeight = NSCollectionLayoutDimension.absolute(50)
+                groupWidth = NSCollectionLayoutDimension.absolute(165)
             default:
                 groupHeight = NSCollectionLayoutDimension.absolute(220)
                 groupWidth = NSCollectionLayoutDimension.absolute(150)
@@ -103,6 +103,7 @@ extension GenericListingViewController {
         ])
         collectionView.register(ListingCell.self, forCellWithReuseIdentifier: ListingCell.reuseIdentifier)
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: ImageCell.reuseIdentifier)
+        collectionView.register(ModeCell.self, forCellWithReuseIdentifier: ModeCell.reuseIdentifier)
         collectionView.register(MuseamCell.self, forCellWithReuseIdentifier: MuseamCell.reuseIdentifier)
         collectionView.register(TitleSupplementaryView.self,
                                 forSupplementaryViewOfKind: GenericListingViewController.titleElementKind,
@@ -120,12 +121,23 @@ extension GenericListingViewController {
                 }
                 cell.imageView.image = UIImage(named:  item.image)
                 return cell
-            case .mode:
+            case .museam:
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MuseamCell.reuseIdentifier, for: indexPath) as? MuseamCell else {
                     fatalError("Cannot create new cell")
                 }
-                //                cell.imageView.image = UIImage(named: item.image)
+                cell.imageView.image = UIImage(named: item.image)
                 cell.titleLabel.text = item.title
+                cell.categoryLabel.text = item.category
+ 
+                return cell
+            case .mode:
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ModeCell.reuseIdentifier, for: indexPath) as? ModeCell else {
+                    fatalError("Cannot create new cell")
+                }
+                let safeItem = item as! ModeItem
+                cell.imageView.image = UIImage(named: safeItem.image)
+                cell.titleLabel.text = safeItem.title
+                cell.bgColor = safeItem.color
                 
                 return cell
             default:
