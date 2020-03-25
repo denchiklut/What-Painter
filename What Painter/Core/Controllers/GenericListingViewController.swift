@@ -56,7 +56,7 @@ extension GenericListingViewController {
                 groupWidth = NSCollectionLayoutDimension.absolute(250)
             case .mode:
                 groupHeight = NSCollectionLayoutDimension.absolute(50)
-                groupWidth = NSCollectionLayoutDimension.absolute(165)
+                groupWidth = NSCollectionLayoutDimension.absolute(170)
             default:
                 groupHeight = NSCollectionLayoutDimension.absolute(220)
                 groupWidth = NSCollectionLayoutDimension.absolute(150)
@@ -67,7 +67,7 @@ extension GenericListingViewController {
             
             let section = NSCollectionLayoutSection(group: group)
             section.orthogonalScrollingBehavior = .continuous
-            section.interGroupSpacing = sectionKind == .painter ? 10 : 20
+            section.interGroupSpacing = sectionKind == .painter ? 10 : 15
             section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
             
             let titleSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
@@ -134,10 +134,10 @@ extension GenericListingViewController {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ModeCell.reuseIdentifier, for: indexPath) as? ModeCell else {
                     fatalError("Cannot create new cell")
                 }
-                let safeItem = item as! ModeItem
-                cell.imageView.image = UIImage(named: safeItem.image)
-                cell.titleLabel.text = safeItem.title
-                cell.bgColor = safeItem.color
+                guard let modeItem = item as? ModeItem else { fatalError("Cannot create ModeItem") }
+                cell.imageView.image = UIImage(named: modeItem.image)
+                cell.titleLabel.text = modeItem.title
+                cell.bgColor = modeItem.color
                 
                 return cell
             default:
@@ -170,7 +170,7 @@ extension GenericListingViewController {
         videosController.collections.forEach {
             let collection = $0
             currentSnapshot.appendSections([collection])
-            currentSnapshot.appendItems(collection.videos)
+            currentSnapshot.appendItems(collection.items)
         }
         dataSource.apply(currentSnapshot, animatingDifferences: false)
     }
