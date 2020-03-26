@@ -8,6 +8,8 @@
 import UIKit
 
 class PaintingCell: UICollectionViewCell {
+    static let reuseIdentifier = "painting-cell-reuse-identifire"
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()

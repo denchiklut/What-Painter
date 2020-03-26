@@ -23,5 +23,4 @@ struct K {
     static let reusablePaintingCell = "paintingIdentifire"
     static let paintingCell = "PaintingCell"
     static let detailHeader = "DetailHeader"
-    static let detailHeaderIdentofire = "detailHeaderIdentofire"
 }

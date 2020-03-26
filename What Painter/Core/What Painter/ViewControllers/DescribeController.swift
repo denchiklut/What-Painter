@@ -8,12 +8,10 @@
 
 import UIKit
 
-private let numberOfItemsPerRow: CGFloat = 3
-private let lineSpacing: CGFloat = 2
-private let interItemSpacing: CGFloat = 2
-private let padding: CGFloat = 0
 
 class DescribeController: UICollectionViewController {
+    static let titleElementKind = UICollectionView.elementKindSectionHeader
+    
     var paintings = [
         Painting(image: "1", name: "a"),
         Painting(image: "2", name: "b"),
@@ -29,19 +27,39 @@ class DescribeController: UICollectionViewController {
         Painting(image: "6", name: "f")
     ]
     
+
+    private let numberOfItemsPerRow: CGFloat = 3
+    private let lineSpacing: CGFloat = 2
+    private let interItemSpacing: CGFloat = 2
+    private let padding: CGFloat = 0
+    
+    var categories = ["Action", "Drama"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(hexString: "2C2C2E")
-        collectionView.backgroundColor = .clear
         
-        collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.contentInsetAdjustmentBehavior = .never
-        collectionView.register(PaintingCell.self, forCellWithReuseIdentifier: K.reusablePaintingCell)
-        collectionView.register(DetailHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: K.detailHeaderIdentofire)
         
-        setupCollectionView()
+        collectionView.register(PaintersCollection.self, forCellWithReuseIdentifier: PaintersCollection.reuseIdentifier)
+        collectionView.register(PaintingCell.self, forCellWithReuseIdentifier: PaintingCell.reuseIdentifier)
+        collectionView.register(TitleSupplementaryView.self,
+                                forSupplementaryViewOfKind: DescribeController.titleElementKind,
+                                withReuseIdentifier: TitleSupplementaryView.reuseIdentifier)
+        collectionView.register(DetailHeader.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: DetailHeader.reuseIdentifier)
+
+        
+        let layout = StrechyHeaderLayout()
+        layout.minimumInteritemSpacing = interItemSpacing
+        layout.sectionInset = UIEdgeInsets.zero
+        layout.minimumLineSpacing = lineSpacing
+
+        collectionView.collectionViewLayout = layout
+        collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.backgroundColor = UIColor(hexString: "2C2C2E")
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
@@ -51,45 +69,65 @@ class DescribeController: UICollectionViewController {
         navigationController?.navigationBar.isHidden = false
     }
     
-    func setupCollectionView() {
-        let width = (collectionView.frame.width - (numberOfItemsPerRow - 1) * interItemSpacing) / numberOfItemsPerRow  - padding
-        let height = width
-
-        let collectionViewFlowLayout = StrechyHeaderLayout()
-        collectionViewFlowLayout.itemSize = CGSize(width: width, height: height)
-        collectionViewFlowLayout.sectionInset = UIEdgeInsets.zero
-        collectionViewFlowLayout.scrollDirection = .vertical
-        collectionViewFlowLayout.minimumLineSpacing = lineSpacing
-        collectionViewFlowLayout.minimumInteritemSpacing = interItemSpacing
-
-        collectionViewFlowLayout.headerReferenceSize = CGSize(width: collectionView.frame.width, height: 560)
-        collectionViewFlowLayout.sectionInset = .init(top: 40, left: padding, bottom: 80, right: padding)
-
-
-        collectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
-    }
 }
 
 // MARK: - Header
 extension DescribeController {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return categories.count
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: K.detailHeaderIdentofire , for: indexPath)
-        header.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 560)
+        if indexPath.section == 0 {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailHeader.reuseIdentifier , for: indexPath) as! DetailHeader
+            return header
+        }
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TitleSupplementaryView.reuseIdentifier, for: indexPath) as! TitleSupplementaryView
+        header.label.text = categories[indexPath.section]
         return header
     }
 }
- 
-// MARK: - DataSource
+
+// MARK: - Cells
 extension DescribeController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        paintings.count
+        if section == 0 {
+            return 1
+        }
+        return paintings.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.reusablePaintingCell, for: indexPath) as! PaintingCell
-        cell.painting = paintings[indexPath.row]
         
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaintersCollection.reuseIdentifier, for: indexPath) as! PaintersCollection
+            
+            return cell
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PaintingCell.reuseIdentifier, for: indexPath) as! PaintingCell
+        cell.painting = paintings[indexPath.row]
+
         return cell
+        
+    }
+}
+
+extension DescribeController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            return .init(width: collectionView.bounds.width, height: 130)
+        }
+        
+        let width = (collectionView.frame.width - (numberOfItemsPerRow - 1) * interItemSpacing) / numberOfItemsPerRow  - padding
+        return .init(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
+            return .init(width: collectionView.bounds.width, height: 560)
+        }
+        return .init(width: collectionView.bounds.width, height: 44)
     }
 }
 

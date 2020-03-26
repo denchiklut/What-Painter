@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailHeader: UICollectionReusableView {
+    static let reuseIdentifier = "detail-header-identofire"
     
     let bgImahe: UIImageView = {
         let iv = UIImageView()

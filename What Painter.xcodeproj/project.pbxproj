@@ -18,8 +18,6 @@
 		2934C318240B0F180009ED78 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C317240B0F180009ED78 /* QuizBrain.swift */; };
 		2934C31A240B10B20009ED78 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C319240B10B20009ED78 /* Question.swift */; };
 		29461C5C242A4E9300B06DCC /* ModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29461C5B242A4E9300B06DCC /* ModeCell.swift */; };
-		29540D552423F00C0085AAE0 /* PainterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29540D542423F00C0085AAE0 /* PainterCell.swift */; };
-		29540D582423F07A0085AAE0 /* PainterCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29540D572423F07A0085AAE0 /* PainterCategoryCell.swift */; };
 		29556CD6242A044A005C744F /* MuseamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29556CD5242A044A005C744F /* MuseamCell.swift */; };
 		295E40512420B1EA00593FEB /* QuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295E40502420B1EA00593FEB /* QuizController.swift */; };
 		295ED916241CC1F400EA382F /* AppUIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295ED915241CC1F400EA382F /* AppUIConfiguration.swift */; };
@@ -30,9 +28,9 @@
 		295ED924241CC99400EA382F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295ED923241CC99400EA382F /* HomeController.swift */; };
 		295ED92B241D19A400EA382F /* GenericCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295ED92A241D19A400EA382F /* GenericCollectionViewController.swift */; };
 		29684D7D2416573C002208DE /* StrechyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684D7C2416573C002208DE /* StrechyHeaderLayout.swift */; };
-		29684D892416CDC3002208DE /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684D882416CDC3002208DE /* CategoryCell.swift */; };
 		296F06A4240A69DF00E220BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F06A3240A69DF00E220BE /* Constants.swift */; };
 		296FB70F240C42A0008A8A5B /* ResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB70E240C42A0008A8A5B /* ResultsController.swift */; };
+		297E8EE5242D1ED1005C09B3 /* PaintersCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E8EE4242D1ED1005C09B3 /* PaintersCollection.swift */; };
 		2996A8C224278BE8005EB565 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996A8C124278BE8005EB565 /* ImageCell.swift */; };
 		29B21AB924195696000D1BAB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B21AB824195696000D1BAB /* Category.swift */; };
 		29B21AC024195DDC000D1BAB /* PaintingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B21ABE24195DDC000D1BAB /* PaintingCell.swift */; };
@@ -59,8 +57,6 @@
 		2934C317240B0F180009ED78 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		2934C319240B10B20009ED78 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		29461C5B242A4E9300B06DCC /* ModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeCell.swift; sourceTree = "<group>"; };
-		29540D542423F00C0085AAE0 /* PainterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainterCell.swift; sourceTree = "<group>"; };
-		29540D572423F07A0085AAE0 /* PainterCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainterCategoryCell.swift; sourceTree = "<group>"; };
 		29556CD5242A044A005C744F /* MuseamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseamCell.swift; sourceTree = "<group>"; };
 		295E40502420B1EA00593FEB /* QuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizController.swift; sourceTree = "<group>"; };
 		295ED915241CC1F400EA382F /* AppUIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUIConfiguration.swift; sourceTree = "<group>"; };
@@ -71,9 +67,9 @@
 		295ED923241CC99400EA382F /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		295ED92A241D19A400EA382F /* GenericCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewController.swift; sourceTree = "<group>"; };
 		29684D7C2416573C002208DE /* StrechyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrechyHeaderLayout.swift; sourceTree = "<group>"; };
-		29684D882416CDC3002208DE /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		296F06A3240A69DF00E220BE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		296FB70E240C42A0008A8A5B /* ResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsController.swift; sourceTree = "<group>"; };
+		297E8EE4242D1ED1005C09B3 /* PaintersCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintersCollection.swift; sourceTree = "<group>"; };
 		2996A8C124278BE8005EB565 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		29B21AB824195696000D1BAB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		29B21ABE24195DDC000D1BAB /* PaintingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingCell.swift; sourceTree = "<group>"; };
@@ -114,22 +110,6 @@
 				29461C5B242A4E9300B06DCC /* ModeCell.swift */,
 			);
 			path = ListingCells;
-			sourceTree = "<group>";
-		};
-		29540D532423EFED0085AAE0 /* PainterCell */ = {
-			isa = PBXGroup;
-			children = (
-				29540D542423F00C0085AAE0 /* PainterCell.swift */,
-			);
-			path = PainterCell;
-			sourceTree = "<group>";
-		};
-		29540D562423F06D0085AAE0 /* PainterCategoryCell */ = {
-			isa = PBXGroup;
-			children = (
-				29540D572423F07A0085AAE0 /* PainterCategoryCell.swift */,
-			);
-			path = PainterCategoryCell;
 			sourceTree = "<group>";
 		};
 		295ED914241CC0D800EA382F /* Core */ = {
@@ -192,14 +172,6 @@
 			path = Layouts;
 			sourceTree = "<group>";
 		};
-		29684D872416CD97002208DE /* CategoryCell */ = {
-			isa = PBXGroup;
-			children = (
-				29684D882416CDC3002208DE /* CategoryCell.swift */,
-			);
-			path = CategoryCell;
-			sourceTree = "<group>";
-		};
 		296F06A1240A4F4B00E220BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,11 +191,9 @@
 			children = (
 				29FEF5502415891C003F3271 /* DetailHeader */,
 				29B21ABB24195D00000D1BAB /* PaintingCell */,
-				29684D872416CD97002208DE /* CategoryCell */,
-				29540D562423F06D0085AAE0 /* PainterCategoryCell */,
-				29540D532423EFED0085AAE0 /* PainterCell */,
 				29F60FD5241E561D00449A84 /* LevelCell */,
 				290B554D24269E1100108B23 /* ListingCells */,
+				297E8EE4242D1ED1005C09B3 /* PaintersCollection.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -426,6 +396,7 @@
 				295ED920241CC82200EA382F /* RootViewController.swift in Sources */,
 				295ED924241CC99400EA382F /* HomeController.swift in Sources */,
 				29EE329E2409B8DA008547E5 /* AppDelegate.swift in Sources */,
+				297E8EE5242D1ED1005C09B3 /* PaintersCollection.swift in Sources */,
 				29BD75AA2411958B0020058C /* Painter.swift in Sources */,
 				295ED92B241D19A400EA382F /* GenericCollectionViewController.swift in Sources */,
 				295ED91C241CC35600EA382F /* UIImage.swift in Sources */,
@@ -433,7 +404,6 @@
 				29556CD6242A044A005C744F /* MuseamCell.swift in Sources */,
 				295ED918241CC2B900EA382F /* AppGenericConfigurationProtocol.swift in Sources */,
 				29EE32A02409B8DA008547E5 /* SceneDelegate.swift in Sources */,
-				29540D582423F07A0085AAE0 /* PainterCategoryCell.swift in Sources */,
 				29F60FD4241E561300449A84 /* LevelCell.swift in Sources */,
 				2996A8C224278BE8005EB565 /* ImageCell.swift in Sources */,
 				2934C31A240B10B20009ED78 /* Question.swift in Sources */,
@@ -445,12 +415,10 @@
 				296F06A4240A69DF00E220BE /* Constants.swift in Sources */,
 				295ED91E241CC39800EA382F /* UIColor.swift in Sources */,
 				2934C318240B0F180009ED78 /* QuizBrain.swift in Sources */,
-				29540D552423F00C0085AAE0 /* PainterCell.swift in Sources */,
 				29138FD4241404CA00785968 /* Painting.swift in Sources */,
 				29684D7D2416573C002208DE /* StrechyHeaderLayout.swift in Sources */,
 				290B554F24269F4D00108B23 /* TitleSupplementaryView.swift in Sources */,
 				2934C314240AFA270009ED78 /* Level.swift in Sources */,
-				29684D892416CDC3002208DE /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
