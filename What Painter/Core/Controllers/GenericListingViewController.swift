@@ -70,8 +70,7 @@ extension GenericListingViewController {
             section.interGroupSpacing = sectionKind == .painter ? 10 : 15
             section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
             
-            let titleSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                   heightDimension: .estimated(44))
+            let titleSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
             let titleSupplementary = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: titleSize,
                 elementKind: GenericListingViewController.titleElementKind,
