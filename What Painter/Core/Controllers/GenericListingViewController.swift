@@ -177,7 +177,7 @@ extension GenericListingViewController {
 
 extension GenericListingViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let dc = DescribeController(collectionViewLayout: UICollectionViewLayout())
+        let dc = GenericDetailCollectionView()
         navigationController?.pushViewController(dc, animated: true)
     }
 }

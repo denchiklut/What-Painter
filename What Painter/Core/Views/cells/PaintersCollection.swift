@@ -11,6 +11,7 @@ import UIKit
 class PaintersCollection: UICollectionViewCell {
     static let reuseIdentifier = "painters-collection-reuse-identifire"
     
+    var painters = [Painter]()
     var collectionView: UICollectionView! = nil
     
     override init(frame: CGRect) {
@@ -53,12 +54,12 @@ extension PaintersCollection {
 
 extension PaintersCollection: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return painters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.reuseIdentifier, for: indexPath) as! ImageCell
-        cell.imageView.image = UIImage(named: String(indexPath.row + 1))
+        cell.imageView.image = UIImage(named: painters[indexPath.row].image)
         return cell
     }
 }

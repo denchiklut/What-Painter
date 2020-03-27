@@ -11,7 +11,7 @@
 		290B554A24265E6700108B23 /* GenericListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B554924265E6700108B23 /* GenericListingViewController.swift */; };
 		290B554C24269E0700108B23 /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B554B24269E0700108B23 /* ListingCell.swift */; };
 		290B554F24269F4D00108B23 /* TitleSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B554E24269F4D00108B23 /* TitleSupplementaryView.swift */; };
-		29138FD02413FE0200785968 /* DescribeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29138FCF2413FE0200785968 /* DescribeController.swift */; };
+		29138FD02413FE0200785968 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29138FCF2413FE0200785968 /* DetailController.swift */; };
 		29138FD4241404CA00785968 /* Painting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29138FD3241404CA00785968 /* Painting.swift */; };
 		2934C314240AFA270009ED78 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C313240AFA270009ED78 /* Level.swift */; };
 		2934C316240B0C070009ED78 /* LevelsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C315240B0C070009ED78 /* LevelsManager.swift */; };
@@ -36,6 +36,7 @@
 		29B21AC024195DDC000D1BAB /* PaintingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B21ABE24195DDC000D1BAB /* PaintingCell.swift */; };
 		29BD75AA2411958B0020058C /* Painter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD75A92411958B0020058C /* Painter.swift */; };
 		29CF6AC8242E29FD002C6B81 /* GenericSearchCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF6AC7242E29FD002C6B81 /* GenericSearchCollectionView.swift */; };
+		29CF6ACC242E9272002C6B81 /* GenericDetailCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF6ACB242E9272002C6B81 /* GenericDetailCollectionView.swift */; };
 		29EE329E2409B8DA008547E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE329D2409B8DA008547E5 /* AppDelegate.swift */; };
 		29EE32A02409B8DA008547E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE329F2409B8DA008547E5 /* SceneDelegate.swift */; };
 		29EE32A72409B8DC008547E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29EE32A62409B8DC008547E5 /* Assets.xcassets */; };
@@ -51,7 +52,7 @@
 		290B554924265E6700108B23 /* GenericListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericListingViewController.swift; sourceTree = "<group>"; };
 		290B554B24269E0700108B23 /* ListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCell.swift; sourceTree = "<group>"; };
 		290B554E24269F4D00108B23 /* TitleSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSupplementaryView.swift; sourceTree = "<group>"; };
-		29138FCF2413FE0200785968 /* DescribeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribeController.swift; sourceTree = "<group>"; };
+		29138FCF2413FE0200785968 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		29138FD3241404CA00785968 /* Painting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painting.swift; sourceTree = "<group>"; };
 		2934C313240AFA270009ED78 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		2934C315240B0C070009ED78 /* LevelsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsManager.swift; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		29B21ABE24195DDC000D1BAB /* PaintingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingCell.swift; sourceTree = "<group>"; };
 		29BD75A92411958B0020058C /* Painter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painter.swift; sourceTree = "<group>"; };
 		29CF6AC7242E29FD002C6B81 /* GenericSearchCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericSearchCollectionView.swift; sourceTree = "<group>"; };
+		29CF6ACB242E9272002C6B81 /* GenericDetailCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDetailCollectionView.swift; sourceTree = "<group>"; };
 		29EE329A2409B8DA008547E5 /* What Painter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "What Painter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29EE329D2409B8DA008547E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29EE329F2409B8DA008547E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,7 +162,7 @@
 				29F60FD6241E57EA00449A84 /* LevelPreviewController.swift */,
 				295E40502420B1EA00593FEB /* QuizController.swift */,
 				296FB70E240C42A0008A8A5B /* ResultsController.swift */,
-				29138FCF2413FE0200785968 /* DescribeController.swift */,
+				29138FCF2413FE0200785968 /* DetailController.swift */,
 				290B554724265AFF00108B23 /* ListingViewController.swift */,
 			);
 			path = ViewControllers;
@@ -256,6 +258,7 @@
 				295ED92A241D19A400EA382F /* GenericCollectionViewController.swift */,
 				290B554924265E6700108B23 /* GenericListingViewController.swift */,
 				29CF6AC7242E29FD002C6B81 /* GenericSearchCollectionView.swift */,
+				29CF6ACB242E9272002C6B81 /* GenericDetailCollectionView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				295E40512420B1EA00593FEB /* QuizController.swift in Sources */,
 				29FEF54E24158915003F3271 /* DetailHeader.swift in Sources */,
 				29B21AC024195DDC000D1BAB /* PaintingCell.swift in Sources */,
+				29CF6ACC242E9272002C6B81 /* GenericDetailCollectionView.swift in Sources */,
 				29461C5C242A4E9300B06DCC /* ModeCell.swift in Sources */,
 				29F60FD7241E57EA00449A84 /* LevelPreviewController.swift in Sources */,
 				295ED920241CC82200EA382F /* RootViewController.swift in Sources */,
@@ -411,7 +415,7 @@
 				2996A8C224278BE8005EB565 /* ImageCell.swift in Sources */,
 				2934C31A240B10B20009ED78 /* Question.swift in Sources */,
 				296FB70F240C42A0008A8A5B /* ResultsController.swift in Sources */,
-				29138FD02413FE0200785968 /* DescribeController.swift in Sources */,
+				29138FD02413FE0200785968 /* DetailController.swift in Sources */,
 				290B554A24265E6700108B23 /* GenericListingViewController.swift in Sources */,
 				29CF6AC8242E29FD002C6B81 /* GenericSearchCollectionView.swift in Sources */,
 				29B21AB924195696000D1BAB /* Category.swift in Sources */,
