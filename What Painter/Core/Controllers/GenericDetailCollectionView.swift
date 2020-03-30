@@ -33,6 +33,7 @@ class GenericDetailCollectionView: UIViewController {
         layout.minimumInteritemSpacing = interItemSpacing
         layout.sectionInset = UIEdgeInsets.zero
         layout.minimumLineSpacing = lineSpacing
+        layout.sectionInsetReference = .fromSafeArea
 
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         

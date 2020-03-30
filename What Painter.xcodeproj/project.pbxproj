@@ -13,6 +13,7 @@
 		290B554F24269F4D00108B23 /* TitleSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B554E24269F4D00108B23 /* TitleSupplementaryView.swift */; };
 		29138FD02413FE0200785968 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29138FCF2413FE0200785968 /* DetailController.swift */; };
 		29138FD4241404CA00785968 /* Painting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29138FD3241404CA00785968 /* Painting.swift */; };
+		292100F624320EF6002D4EFD /* PaintingTour.realm in Resources */ = {isa = PBXBuildFile; fileRef = 292100F524320EF6002D4EFD /* PaintingTour.realm */; };
 		2934C314240AFA270009ED78 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C313240AFA270009ED78 /* Level.swift */; };
 		2934C316240B0C070009ED78 /* LevelsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C315240B0C070009ED78 /* LevelsManager.swift */; };
 		2934C318240B0F180009ED78 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2934C317240B0F180009ED78 /* QuizBrain.swift */; };
@@ -28,6 +29,7 @@
 		295ED924241CC99400EA382F /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295ED923241CC99400EA382F /* HomeController.swift */; };
 		295ED92B241D19A400EA382F /* GenericCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295ED92A241D19A400EA382F /* GenericCollectionViewController.swift */; };
 		29684D7D2416573C002208DE /* StrechyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29684D7C2416573C002208DE /* StrechyHeaderLayout.swift */; };
+		296D7988242F58F300C679EC /* StrechHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296D7987242F58F300C679EC /* StrechHeader.swift */; };
 		296F06A4240A69DF00E220BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F06A3240A69DF00E220BE /* Constants.swift */; };
 		296FB70F240C42A0008A8A5B /* ResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FB70E240C42A0008A8A5B /* ResultsController.swift */; };
 		297E8EE5242D1ED1005C09B3 /* PaintersCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297E8EE4242D1ED1005C09B3 /* PaintersCollection.swift */; };
@@ -54,6 +56,7 @@
 		290B554E24269F4D00108B23 /* TitleSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSupplementaryView.swift; sourceTree = "<group>"; };
 		29138FCF2413FE0200785968 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		29138FD3241404CA00785968 /* Painting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painting.swift; sourceTree = "<group>"; };
+		292100F524320EF6002D4EFD /* PaintingTour.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = PaintingTour.realm; sourceTree = "<group>"; };
 		2934C313240AFA270009ED78 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		2934C315240B0C070009ED78 /* LevelsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsManager.swift; sourceTree = "<group>"; };
 		2934C317240B0F180009ED78 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		295ED923241CC99400EA382F /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		295ED92A241D19A400EA382F /* GenericCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewController.swift; sourceTree = "<group>"; };
 		29684D7C2416573C002208DE /* StrechyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrechyHeaderLayout.swift; sourceTree = "<group>"; };
+		296D7987242F58F300C679EC /* StrechHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrechHeader.swift; sourceTree = "<group>"; };
 		296F06A3240A69DF00E220BE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		296FB70E240C42A0008A8A5B /* ResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsController.swift; sourceTree = "<group>"; };
 		297E8EE4242D1ED1005C09B3 /* PaintersCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintersCollection.swift; sourceTree = "<group>"; };
@@ -116,11 +120,20 @@
 			path = ListingCells;
 			sourceTree = "<group>";
 		};
+		292100F424320EB6002D4EFD /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				292100F524320EF6002D4EFD /* PaintingTour.realm */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		295ED914241CC0D800EA382F /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				295ED921241CC95300EA382F /* What Painter */,
 				296F06A1240A4F4B00E220BE /* Models */,
+				292100F424320EB6002D4EFD /* Database */,
 				29EE32B12409BADB008547E5 /* Views */,
 				29EE32B22409BAE4008547E5 /* Controllers */,
 				295ED91A241CC33D00EA382F /* Extensions */,
@@ -198,6 +211,7 @@
 				29F60FD5241E561D00449A84 /* LevelCell */,
 				290B554D24269E1100108B23 /* ListingCells */,
 				297E8EE4242D1ED1005C09B3 /* PaintersCollection.swift */,
+				296D7987242F58F300C679EC /* StrechHeader.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -355,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				292100F624320EF6002D4EFD /* PaintingTour.realm in Resources */,
 				29EE32AA2409B8DC008547E5 /* LaunchScreen.storyboard in Resources */,
 				29EE32A72409B8DC008547E5 /* Assets.xcassets in Resources */,
 			);
@@ -399,6 +414,7 @@
 				29B21AC024195DDC000D1BAB /* PaintingCell.swift in Sources */,
 				29CF6ACC242E9272002C6B81 /* GenericDetailCollectionView.swift in Sources */,
 				29461C5C242A4E9300B06DCC /* ModeCell.swift in Sources */,
+				296D7988242F58F300C679EC /* StrechHeader.swift in Sources */,
 				29F60FD7241E57EA00449A84 /* LevelPreviewController.swift in Sources */,
 				295ED920241CC82200EA382F /* RootViewController.swift in Sources */,
 				295ED924241CC99400EA382F /* HomeController.swift in Sources */,
