@@ -66,7 +66,7 @@ extension ListingViewController {
                                        ListingItem(title: "Испания", image: "3", category: " "),
                                        ListingItem(title: "Нидерланды", image: "4", category: " "),
                                        ListingItem(title: "Швеция", image: "5", category: " "),
-                                       ListingItem(title: " Япония", image: "6", category: " ")])
+                                       ListingItem(title: "Япония", image: "6", category: " ")])
         ]
     }
 }

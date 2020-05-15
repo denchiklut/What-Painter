@@ -23,7 +23,6 @@ class PaintingCell: UICollectionViewCell {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
-        iv.layer.cornerRadius = 3
         iv.clipsToBounds = true
         
         return iv

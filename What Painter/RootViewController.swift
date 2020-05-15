@@ -37,14 +37,9 @@ class RootViewController: UITabBarController {
         listingNavController.tabBarItem.selectedImage = UIImage(systemName: "rectangle.fill.on.rectangle.angled.fill")
         listingNavController.tabBarItem.title = "Learn"
         
-        let searchNavController = UINavigationController(rootViewController: GenericSearchCollectionView())
-        searchNavController.tabBarItem.image = UIImage(systemName: "magnifyingglass.circle")
-        searchNavController.tabBarItem.selectedImage = UIImage(systemName: "magnifyingglass.circle.fill")
-        searchNavController.tabBarItem.title = "Search"
-        
         tabBar.tintColor = .systemPink
         
-        viewControllers = [listingNavController, homeNavController, searchNavController]
+        viewControllers = [listingNavController, homeNavController]
     }
     
     private func createLayout() -> UICollectionViewLayout {

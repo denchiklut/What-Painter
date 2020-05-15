@@ -48,6 +48,7 @@ extension ListingCell {
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30),
 
             titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: spacing),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -56,7 +57,6 @@ extension ListingCell {
             categoryLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             categoryLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             categoryLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            categoryLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
             ])
     }
 }

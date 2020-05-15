@@ -25,14 +25,6 @@ class GenericListingViewController: UIViewController {
         configureHierarchy()
         configureDataSource()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
-    }
 }
 
 extension GenericListingViewController {
@@ -91,6 +83,7 @@ extension GenericListingViewController {
     func configureHierarchy() {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .systemBackground
         collectionView.delegate = self
         view.addSubview(collectionView)
@@ -177,7 +170,7 @@ extension GenericListingViewController {
 
 extension GenericListingViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let dc = GenericDetailCollectionView()
+        let dc = GenericPainterView()
         navigationController?.pushViewController(dc, animated: true)
     }
 }
