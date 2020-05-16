@@ -28,29 +28,14 @@ class PaintingCell: UICollectionViewCell {
         return iv
     }()
     
-    let imageName: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textAlignment = .center
-        
-        return label
-    }()
-    
     func setupView() {
         addSubview(bgImage)
-        addSubview(imageName)
         
         NSLayoutConstraint.activate([
             bgImage.topAnchor.constraint(equalTo: self.topAnchor),
             bgImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             bgImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             bgImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-            imageName.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            imageName.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            imageName.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            imageName.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
@@ -58,7 +43,6 @@ class PaintingCell: UICollectionViewCell {
         didSet {
             if let safePainter = painting {
                 bgImage.image = UIImage(named: safePainter.image)
-                imageName.text = safePainter.name
             }
         }
     }

@@ -33,6 +33,7 @@ class RootViewController: UITabBarController {
         
         
         let listingNavController = UINavigationController(rootViewController: GenericListingViewController())
+        listingNavController.navigationBar.tintColor = .systemPink
         listingNavController.tabBarItem.image = UIImage(systemName: "rectangle.on.rectangle.angled")
         listingNavController.tabBarItem.selectedImage = UIImage(systemName: "rectangle.fill.on.rectangle.angled.fill")
         listingNavController.tabBarItem.title = "Learn"

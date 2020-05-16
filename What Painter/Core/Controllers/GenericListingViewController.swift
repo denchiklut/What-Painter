@@ -20,8 +20,14 @@ class GenericListingViewController: UIViewController {
     var currentSnapshot: NSDiffableDataSourceSnapshot<ListingCollection, ListingItem>! = nil
     static let titleElementKind = "title-element-kind"
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: nil, action: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "What painter"
         configureHierarchy()
         configureDataSource()
     }
@@ -50,7 +56,7 @@ extension GenericListingViewController {
                 groupHeight = NSCollectionLayoutDimension.absolute(50)
                 groupWidth = NSCollectionLayoutDimension.absolute(170)
             default:
-                groupHeight = NSCollectionLayoutDimension.absolute(220)
+                groupHeight = NSCollectionLayoutDimension.absolute(180)
                 groupWidth = NSCollectionLayoutDimension.absolute(150)
             }
             
