@@ -24,13 +24,9 @@ class GenericPainterView: UIViewController {
         case painters, main
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: nil, action: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "What Painter"
+        title = "Painter"
         
         configureHierarchy()
         configureDataSource()
@@ -103,6 +99,7 @@ extension GenericPainterView {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .systemBackground
+        collectionView.delegate = self
         
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
@@ -162,6 +159,34 @@ extension GenericPainterView {
         }
         dataSource.apply(currentSnapshot, animatingDifferences: false)
         
+    }
+}
+
+extension GenericPainterView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        guard let sectionKind = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind") }
+        
+        if sectionKind == .main {
+            if let item = dataSource.itemIdentifier(for: indexPath) {
+                let configuration = UIContextMenuConfiguration(identifier: "\(indexPath.row)" as NSCopying, previewProvider: {
+                    return PaintingPreviewController(item: item)
+                }){ action in
+                    let copy = UIAction(title: "Copy", image: UIImage(systemName: "doc.on.doc")) { (action: UIAction) in
+                        // handler
+                    }
+                    let share = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { (action: UIAction) in
+                        // handler
+                    }
+                    let download = UIAction(title: "Download", image: UIImage(systemName: "square.and.arrow.down")) { (action: UIAction) in
+                        // handler
+                    }
+                    return UIMenu(title: "", options: .destructive, children: [copy, share, download])
+                }
+                return configuration
+            }
+        }
+        
+        return nil
     }
 }
 

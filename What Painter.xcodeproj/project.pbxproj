@@ -45,6 +45,7 @@
 		29EE32AA2409B8DC008547E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29EE32A82409B8DC008547E5 /* LaunchScreen.storyboard */; };
 		29F60FD4241E561300449A84 /* LevelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F60FD3241E561300449A84 /* LevelCell.swift */; };
 		29F60FD7241E57EA00449A84 /* LevelPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F60FD6241E57EA00449A84 /* LevelPreviewController.swift */; };
+		29FB9BA02471405900C78953 /* PaintingPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB9B9F2471405900C78953 /* PaintingPreviewController.swift */; };
 		29FEF54E24158915003F3271 /* DetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FEF54C24158915003F3271 /* DetailHeader.swift */; };
 		683DC3E1888DE55B9A14F430 /* libPods-What Painter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FF9272CA129C09BFAF79D8 /* libPods-What Painter.a */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		29EE32AB2409B8DC008547E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29F60FD3241E561300449A84 /* LevelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCell.swift; sourceTree = "<group>"; };
 		29F60FD6241E57EA00449A84 /* LevelPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPreviewController.swift; sourceTree = "<group>"; };
+		29FB9B9F2471405900C78953 /* PaintingPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingPreviewController.swift; sourceTree = "<group>"; };
 		29FEF54C24158915003F3271 /* DetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeader.swift; sourceTree = "<group>"; };
 		75FF9272CA129C09BFAF79D8 /* libPods-What Painter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-What Painter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6351529AC64F46E34F63FED /* Pods-What Painter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-What Painter.release.xcconfig"; path = "Target Support Files/Pods-What Painter/Pods-What Painter.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 		29EE32B22409BAE4008547E5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				29FB9B9E2471401500C78953 /* ContextMenus */,
 				29DA79DA246E8DA600142FB9 /* DetailScreens */,
 				295ED92A241D19A400EA382F /* GenericCollectionViewController.swift */,
 				290B554924265E6700108B23 /* GenericListingViewController.swift */,
@@ -299,6 +302,14 @@
 				29F60FD3241E561300449A84 /* LevelCell.swift */,
 			);
 			path = LevelCell;
+			sourceTree = "<group>";
+		};
+		29FB9B9E2471401500C78953 /* ContextMenus */ = {
+			isa = PBXGroup;
+			children = (
+				29FB9B9F2471405900C78953 /* PaintingPreviewController.swift */,
+			);
+			path = ContextMenus;
 			sourceTree = "<group>";
 		};
 		29FEF5502415891C003F3271 /* DetailHeader */ = {
@@ -438,6 +449,7 @@
 				29BD75AA2411958B0020058C /* Painter.swift in Sources */,
 				295ED92B241D19A400EA382F /* GenericCollectionViewController.swift in Sources */,
 				295ED91C241CC35600EA382F /* UIImage.swift in Sources */,
+				29FB9BA02471405900C78953 /* PaintingPreviewController.swift in Sources */,
 				290B554C24269E0700108B23 /* ListingCell.swift in Sources */,
 				29556CD6242A044A005C744F /* MuseamCell.swift in Sources */,
 				29A475F6246EE27F00C05218 /* PainterViewController.swift in Sources */,
